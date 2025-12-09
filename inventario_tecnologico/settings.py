@@ -22,7 +22,11 @@ SECRET_KEY = 'django-insecure-m_k8*j_j^z@h8^t@3v$3@z(97!g^c2b0-x(0g-i0^77^$l*^'
 DEBUG = True
 
 # Hosts permitidos para servir el proyecto.
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.250',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # ==============================================================================
@@ -152,7 +156,7 @@ STATICFILES_DIRS = [
 ]
 
 # Directorio donde se recogerán todos los estáticos para producción (ejecutar collectstatic)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+STATIC_ROOT = '/home/patarroyoalexis/inventario_tecnologico/staticfiles'
 
 # URL y directorio de archivos subidos por el usuario (MEDIA)
 MEDIA_URL = '/media/'
