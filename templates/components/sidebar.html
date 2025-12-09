@@ -1,0 +1,68 @@
+{# components/sidebar.html - Usado para filtros o navegación secundaria #}
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-secondary text-white">
+        <h6 class="mb-0"><i class="fas fa-filter me-2"></i> Filtros de Inventario</h6>
+    </div>
+    <div class="card-body">
+        
+        {# Asume que la variable 'filter' fue pasada desde la vista ListaInventarioView #}
+        {% if filter %}
+            <form method="get" class="row g-3">
+                
+                {# Búsqueda Global (q) #}
+                <div class="col-12">
+                    <label for="{{ filter.q.id_for_label }}" class="form-label fw-bold">{{ filter.q.label }}</label>
+                    {{ filter.q }}
+                </div>
+                
+                {# Filtro por Tipo de Dispositivo #}
+                <div class="col-12">
+                    <label for="{{ filter.tipo_dispositivo.id_for_label }}" class="form-label fw-bold">{{ filter.tipo_dispositivo.label }}</label>
+                    {{ filter.tipo_dispositivo }}
+                </div>
+                
+                {# Filtro por Estado #}
+                <div class="col-12">
+                    <label for="{{ filter.estado.id_for_label }}" class="form-label fw-bold">{{ filter.estado.label }}</label>
+                    {{ filter.estado }}
+                </div>
+                
+                {# Filtro por Marca #}
+                <div class="col-12">
+                    <label for="{{ filter.marca.id_for_label }}" class="form-label fw-bold">{{ filter.marca.label }}</label>
+                    {{ filter.marca }}
+                </div>
+                
+                {# Filtro por Localización #}
+                <div class="col-12">
+                    <label for="{{ filter.localizacion.id_for_label }}" class="form-label fw-bold">{{ filter.localizacion.label }}</label>
+                    {{ filter.localizacion }}
+                </div>
+
+                <hr class="my-3">
+                <h6 class="fw-bold">Rango de Adquisición</h6>
+
+                {# Filtro por Fecha Desde #}
+                <div class="col-12">
+                    <label for="{{ filter.fecha_desde.id_for_label }}" class="form-label">{{ filter.fecha_desde.label }}</label>
+                    {{ filter.fecha_desde }}
+                </div>
+
+                {# Filtro por Fecha Hasta #}
+                <div class="col-12">
+                    <label for="{{ filter.fecha_hasta.id_for_label }}" class="form-label">{{ filter.fecha_hasta.label }}</label>
+                    {{ filter.fecha_hasta }}
+                </div>
+                
+                {# Botones #}
+                <div class="col-12 d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search me-1"></i> Aplicar Filtros</button>
+                    <a href="{% url 'inventario:lista_inventario' %}" class="btn btn-outline-secondary"><i class="fas fa-undo me-1"></i> Limpiar</a>
+                </div>
+            </form>
+        {% else %}
+            <p class="text-muted">Los filtros no están disponibles en este momento.</p>
+        {% endif %}
+
+    </div>
+</div>

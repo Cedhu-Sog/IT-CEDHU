@@ -1,0 +1,264 @@
+{# inventario/templates/inventario/editar_elemento.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Editar Elemento{% endblock %}
+
+{% block header_title %}
+    Editar Activo: 
+    <span class="text-info">
+        {% if elemento.maneja_cantidad %}
+            {{ elemento.marca }} {{ elemento.modelo }} ({{ elemento.cantidad }} uds.)
+        {% else %}
+            {{ elemento.serial }}
+        {% endif %}
+    </span>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% include 'components/breadcrumbs.html' %}
+    <li class="breadcrumb-item"><a href="{% url 'inventario:lista_inventario' %}">Inventario</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'inventario:ver_elemento' pk=elemento.pk %}">
+        {% if elemento.maneja_cantidad %}{{ elemento.marca }} {{ elemento.modelo }}{% else %}{{ elemento.serial }}{% endif %}
+    </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Editar</li>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-edit me-2"></i> Modificar Elemento</h5>
+            </div>
+            <div class="card-body">
+                
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    {# ---------------------------------------------------- #}
+                    {# Errores de Campos No Específicos #}
+                    {# ---------------------------------------------------- #}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Error de formulario:</strong>
+                            {% for error in form.non_field_errors %}
+                                <p class="mb-0">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    <div class="row g-3">
+                        
+                        {# ====== NUEVA SECCIÓN: Tipo de Control ====== #}
+                        <h6 class="mt-3 mb-3 text-primary"><i class="fas fa-cogs me-1"></i> Tipo de Control de Inventario</h6>
+                        
+                        <div class="col-12">
+                            <div class="card bg-light border-primary">
+                                <div class="card-body">
+                                    <div class="form-check form-switch">
+                                        {{ form.maneja_cantidad }}
+                                        <label class="form-check-label" for="id_maneja_cantidad">
+                                            <strong>¿Este elemento se controla por cantidad?</strong>
+                                            <br>
+                                            <small class="text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>
+                                                Activa esta opción para elementos como cables, mouse, teclados genéricos, etc. 
+                                                Desactívala para equipos con serial único.
+                                            </small>
+                                        </label>
+                                    </div>
+                                    {% if form.maneja_cantidad.errors %}<small class="text-danger d-block mt-2">{{ form.maneja_cantidad.errors.as_text }}</small>{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {# Sección 1: Identificación Básica #}
+                        <h6 class="mt-4 mb-3 text-primary"><i class="fas fa-barcode me-1"></i> Información Clave</h6>
+                        
+                        {# Tipo de Dispositivo #}
+                        <div class="col-md-4">
+                            <label for="{{ form.tipo_dispositivo.id_for_label }}" class="form-label fw-bold">{{ form.tipo_dispositivo.label }}</label>
+                            {{ form.tipo_dispositivo }}
+                            {% if form.tipo_dispositivo.errors %}<small class="text-danger d-block">{{ form.tipo_dispositivo.errors.as_text }}</small>{% endif %}
+                        </div>
+
+                        {# Marca #}
+                        <div class="col-md-4">
+                            <label for="{{ form.marca.id_for_label }}" class="form-label fw-bold">{{ form.marca.label }}</label>
+                            {{ form.marca }}
+                            {% if form.marca.errors %}<small class="text-danger d-block">{{ form.marca.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# Modelo #}
+                        <div class="col-md-4">
+                            <label for="{{ form.modelo.id_for_label }}" class="form-label fw-bold">{{ form.modelo.label }}</label>
+                            {{ form.modelo }}
+                            {% if form.modelo.errors %}<small class="text-danger d-block">{{ form.modelo.errors.as_text }}</small>{% endif %}
+                        </div>
+
+                        {# ====== Serial (se oculta/muestra dinámicamente) ====== #}
+                        <div class="col-md-6" id="serial-container">
+                            <label for="{{ form.serial.id_for_label }}" class="form-label fw-bold">{{ form.serial.label }}</label>
+                            {{ form.serial }}
+                            <div class="form-text">El número de serie puede editarse si es necesario.</div>
+                            {% if form.serial.errors %}<small class="text-danger d-block">{{ form.serial.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# ====== NUEVO: Campo Cantidad (se oculta/muestra dinámicamente) ====== #}
+                        <div class="col-md-6" id="cantidad-container" style="display: none;">
+                            <label for="{{ form.cantidad.id_for_label }}" class="form-label fw-bold">
+                                {{ form.cantidad.label }} 
+                                <span class="text-danger">*</span>
+                            </label>
+                            {{ form.cantidad }}
+                            <div class="form-text">Actualiza el número de unidades disponibles.</div>
+                            {% if form.cantidad.errors %}<small class="text-danger d-block">{{ form.cantidad.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# Precio y Fecha de Adquisición #}
+                        <div class="col-md-3">
+                            <label for="{{ form.precio.id_for_label }}" class="form-label fw-bold">{{ form.precio.label }}</label>
+                            {{ form.precio }}
+                            {% if form.precio.errors %}<small class="text-danger d-block">{{ form.precio.errors.as_text }}</small>{% endif %}
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="{{ form.fecha_adquisicion.id_for_label }}" class="form-label fw-bold">{{ form.fecha_adquisicion.label }} <span class="text-danger">*</span></label>
+                            {{ form.fecha_adquisicion }}
+                            {% if form.fecha_adquisicion.errors %}<small class="text-danger d-block">{{ form.fecha_adquisicion.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# Sección 2: Ubicación y Estado #}
+                        <h6 class="mt-4 mb-3 text-primary"><i class="fas fa-map-marker-alt me-1"></i> Ubicación y Estado</h6>
+                        
+                        {# Localización #}
+                        <div class="col-md-6">
+                            <label for="{{ form.localizacion.id_for_label }}" class="form-label fw-bold">{{ form.localizacion.label }}</label>
+                            {{ form.localizacion }}
+                            {% if form.localizacion.errors %}<small class="text-danger d-block">{{ form.localizacion.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# Estado #}
+                        <div class="col-md-6">
+                            <label for="{{ form.estado.id_for_label }}" class="form-label fw-bold">{{ form.estado.label }}</label>
+                            {{ form.estado }}
+                            {% if form.estado.errors %}<small class="text-danger d-block">{{ form.estado.errors.as_text }}</small>{% endif %}
+                        </div>
+
+                        {# Descripción #}
+                        <div class="col-12">
+                            <label for="{{ form.descripcion.id_for_label }}" class="form-label fw-bold">{{ form.descripcion.label }}</label>
+                            {{ form.descripcion }}
+                            {% if form.descripcion.errors %}<small class="text-danger d-block">{{ form.descripcion.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# Imagen Actual y Nueva Imagen #}
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Imagen del Elemento</label>
+                            {% if elemento.imagen %}
+                                <div class="mb-2">
+                                    <span class="text-muted small">Imagen actual: </span>
+                                    <a href="{{ elemento.imagen.url }}" target="_blank">Ver Archivo</a>
+                                </div>
+                            {% endif %}
+                            
+                            <label for="{{ form.imagen.id_for_label }}" class="form-label">Subir nueva imagen (reemplazará la actual)</label>
+                            {{ form.imagen }}
+                            {% if form.imagen.errors %}<small class="text-danger d-block">{{ form.imagen.errors.as_text }}</small>{% endif %}
+                        </div>
+                        
+                        {# ---------------------------------------------------- #}
+                        {# Botones #}
+                        {# ---------------------------------------------------- #}
+                        <div class="col-12 pt-4 border-top mt-5">
+                            <button type="submit" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-save me-2"></i> Actualizar Elemento
+                            </button>
+                            <a href="{% url 'inventario:ver_elemento' pk=elemento.pk %}" class="btn btn-outline-secondary btn-lg">
+                                Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer text-end">
+                <a href="{% url 'inventario:eliminar_elemento' pk=elemento.pk %}" class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash me-1"></i> Eliminar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{# ====== SCRIPTS ACTUALIZADOS ====== #}
+{% block extra_js %}
+    <script>
+        // Script para asegurar la correcta visualización del formulario
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aplica la clase 'form-control' a la mayoría de los campos de entrada
+            document.querySelectorAll('input:not([type="checkbox"]):not([type="radio"]):not([readonly]):not([disabled]), select, textarea').forEach(function(element) {
+                if (!element.classList.contains('form-control') && !element.classList.contains('form-check-input')) {
+                    element.classList.add('form-control');
+                }
+            });
+            // Asegurar que el input de tipo file no tenga el form-control base para el estilo
+            const fileInput = document.querySelector('input[type="file"]');
+            if (fileInput) {
+                fileInput.classList.remove('form-control');
+            }
+            
+            // ====== NUEVA FUNCIONALIDAD: Control de Serial vs Cantidad ====== //
+            const manejaQuantityCheckbox = document.getElementById('id_maneja_cantidad');
+            const serialField = document.getElementById('id_serial');
+            const cantidadField = document.getElementById('id_cantidad');
+            const serialContainer = document.getElementById('serial-container');
+            const cantidadContainer = document.getElementById('cantidad-container');
+            
+            function toggleFields() {
+                const manejaQuantity = manejaQuantityCheckbox?.checked || false;
+                
+                if (manejaQuantity) {
+                    // Maneja cantidad: mostrar cantidad, ocultar serial
+                    if (cantidadContainer) cantidadContainer.style.display = 'block';
+                    if (serialContainer) serialContainer.style.display = 'none';
+                    
+                    // Hacer cantidad requerida y serial opcional
+                    if (cantidadField) {
+                        cantidadField.required = true;
+                        cantidadField.disabled = false;
+                    }
+                    if (serialField) {
+                        serialField.required = false;
+                        serialField.disabled = true;
+                        serialField.value = '';
+                    }
+                } else {
+                    // Maneja serial: mostrar serial, ocultar cantidad
+                    if (serialContainer) serialContainer.style.display = 'block';
+                    if (cantidadContainer) cantidadContainer.style.display = 'none';
+                    
+                    // Hacer serial requerido y cantidad opcional
+                    if (serialField) {
+                        serialField.required = true;
+                        serialField.disabled = false;
+                    }
+                    if (cantidadField) {
+                        cantidadField.required = false;
+                        cantidadField.disabled = true;
+                        cantidadField.value = '1';
+                    }
+                }
+            }
+            
+            // Ejecutar al cargar la página
+            if (manejaQuantityCheckbox) {
+                toggleFields();
+                // Ejecutar cada vez que cambie el checkbox
+                manejaQuantityCheckbox.addEventListener('change', toggleFields);
+            }
+        });
+    </script>
+{% endblock %}

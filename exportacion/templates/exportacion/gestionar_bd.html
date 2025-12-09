@@ -1,0 +1,77 @@
+{# exportacion/templates/exportacion/gestionar_bd.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gestión de Base de Datos{% endblock %}
+
+{% block header_title %}Gestión y Respaldo de la Base de Datos{% endblock %}
+
+{% block breadcrumbs %}
+    {% include 'components/breadcrumbs.html' %}
+    <li class="breadcrumb-item active" aria-current="page">Gestión BD</li>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0"><i class="fas fa-database me-2"></i> Opciones de Respaldo y Restauración</h5>
+            </div>
+            <div class="card-body p-4">
+                
+                <p class="lead text-center mb-5">
+                    Utilice estas opciones con precaución para crear respaldos de seguridad o restaurar el inventario completo.
+                </p>
+
+                <div class="row g-4">
+                    
+                    {# Opción 1: Descargar Base de Datos #}
+                    <div class="col-md-6">
+                        <div class="card border-success h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-download fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">Descargar Respaldo (BD)</h5>
+                                <p class="card-text">
+                                    Genera una copia de seguridad del archivo `db.sqlite3` con todos los datos del inventario.
+                                </p>
+                                <a href="{% url 'exportacion:descargar_bd' %}" class="btn btn-success btn-lg mt-3">
+                                    <i class="fas fa-file-download me-2"></i> Descargar BD
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {# Opción 2: Cargar Base de Datos #}
+                    <div class="col-md-6">
+                        <div class="card border-danger h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-upload fa-3x text-danger mb-3"></i>
+                                <h5 class="card-title">Cargar/Restaurar BD</h5>
+                                <p class="card-text">
+                                    Reemplaza la base de datos actual con un archivo de respaldo. **Acción irreversible.**
+                                </p>
+                                <a href="{% url 'exportacion:cargar_bd' %}" class="btn btn-danger btn-lg mt-3">
+                                    <i class="fas fa-file-upload me-2"></i> Cargar BD
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <p class="text-muted small mt-5 text-center">
+                    Los archivos de respaldo se guardarán en una carpeta llamada "Base de Datos - Inventario".
+                </p>
+
+            </div>
+            
+            <div class="card-footer text-end bg-light">
+                <a href="{% url 'inventario:dashboard' %}" class="text-decoration-none">
+                    <i class="fas fa-arrow-left me-1"></i> Volver al Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

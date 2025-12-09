@@ -1,0 +1,121 @@
+{# inventario/templates/inventario/ver_producto.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Detalle: {{ elemento.serial }}{% endblock %}
+
+{% block header_title %}Detalle del Activo: <span class="text-info">{{ elemento.serial }}</span>{% endblock %}
+
+{% block breadcrumbs %}
+    {% include 'components/breadcrumbs.html' %}
+    <li class="breadcrumb-item"><a href="{% url 'inventario:lista_inventario' %}">Inventario</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ elemento.serial }}</li>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 text-dark">
+                    <i class="fas fa-info-circle me-2"></i> Información General
+                </h5>
+                <div class="btn-group">
+                    <a href="{% url 'inventario:editar_elemento' pk=elemento.pk %}" class="btn btn-sm btn-primary" title="Editar Elemento">
+                        <i class="fas fa-edit me-1"></i> Editar
+                    </a>
+                    <a href="{% url 'inventario:eliminar_elemento' pk=elemento.pk %}" class="btn btn-sm btn-danger" title="Eliminar Elemento">
+                        <i class="fas fa-trash me-1"></i> Eliminar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                <div class="row">
+                    
+                    {# Columna de Imagen #}
+                    <div class="col-md-4 text-center mb-4">
+                        {% if elemento.imagen %}
+                            <img src="{{ elemento.imagen.url }}" class="img-fluid rounded shadow-sm" alt="Imagen de {{ elemento.serial }}">
+                        {% else %}
+                            <img src="{% static 'img/placeholders/no-image.png' %}" class="img-fluid rounded shadow-sm" alt="Sin Imagen">
+                            <p class="text-muted small mt-2">No hay imagen disponible</p>
+                        {% endif %}
+                    </div>
+
+                    {# Columna de Detalles #}
+                    <div class="col-md-8">
+                        <h4 class="mb-3">{{ elemento.marca }} {{ elemento.modelo }}</h4>
+                        
+                        <dl class="row">
+                            <dt class="col-sm-4 text-muted">Serial / Etiqueta:</dt>
+                            <dd class="col-sm-8 fw-bold">{{ elemento.serial }}</dd>
+
+                            <dt class="col-sm-4 text-muted">Tipo de Dispositivo:</dt>
+                            <dd class="col-sm-8">{{ elemento.tipo_dispositivo.nombre }}</dd>
+
+                            <dt class="col-sm-4 text-muted">Marca y Modelo:</dt>
+                            <dd class="col-sm-8">{{ elemento.marca }} / {{ elemento.modelo }}</dd>
+                            
+                            <hr class="my-2">
+
+                            <dt class="col-sm-4 text-muted">Ubicación Actual:</dt>
+                            <dd class="col-sm-8">{{ elemento.localizacion }}</dd>
+                            
+                            <dt class="col-sm-4 text-muted">Estado:</dt>
+                            <dd class="col-sm-8">
+                                {% if elemento.estado.nombre|lower == 'activo' %}
+                                    <span class="badge bg-success fs-6">{{ elemento.estado.nombre }}</span>
+                                {% elif elemento.estado.nombre|lower == 'en reparación' %}
+                                    <span class="badge bg-warning text-dark fs-6">{{ elemento.estado.nombre }}</span>
+                                {% else %}
+                                    <span class="badge bg-secondary fs-6">{{ elemento.estado.nombre }}</span>
+                                {% endif %}
+                            </dd>
+
+                            <hr class="my-2">
+                            
+                            <dt class="col-sm-4 text-muted">Fecha de Adquisición:</dt>
+                            <dd class="col-sm-8">{{ elemento.fecha_adquisicion|date:"d M, Y" }}</dd>
+
+                            <dt class="col-sm-4 text-muted">Costo:</dt>
+                            <dd class="col-sm-8">
+                                {% if elemento.precio %}
+                                    $ {{ elemento.precio|floatformat:2 }}
+                                {% else %}
+                                    N/A
+                                {% endif %}
+                            </dd>
+                        </dl>
+                        
+                        <h6 class="mt-4 border-bottom pb-1">Descripción / Notas</h6>
+                        <p>{{ elemento.descripcion|default:"No hay descripción detallada." }}</p>
+                    </div>
+                </div>
+
+                {# Sección de Auditoría #}
+                <hr class="mt-4">
+                <h6 class="text-muted"><i class="fas fa-user-clock me-1"></i> Auditoría</h6>
+                <div class="row small text-muted">
+                    <div class="col-md-4">
+                        <strong>Registrado por:</strong> {{ elemento.usuario_registro.get_full_name|default:elemento.usuario_registro.email }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Fecha de Registro:</strong> {{ elemento.fecha_registro|date:"d M, Y H:i" }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Última Actualización:</strong> {{ elemento.fecha_actualizacion|date:"d M, Y H:i" }}
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="card-footer text-end bg-white">
+                <a href="{% url 'inventario:lista_inventario' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-1"></i> Volver al Inventario
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

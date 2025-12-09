@@ -1,0 +1,81 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'inventario:dashboard' %}">
+            <i class="fa-solid fa-laptop me-2"></i>IT-CEDHU
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {# Solo muestra la navegación si el usuario está autenticado #}
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'inventario:lista_inventario' %}">
+                            <i class="fas fa-list-alt me-1"></i> Inventario
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-success" href="{% url 'inventario:anadir_elemento' %}">
+                            <i class="fas fa-plus me-1"></i> Añadir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'exportacion:opciones_exportacion' %}">
+                            <i class="fas fa-file-export me-1"></i> Reportes
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+            
+            {# Autenticación y Perfil #}
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-shield me-1"></i> Admin
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Panel de Administración</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item " href="{% url 'admin:usuarios_usuario_changelist' %}">Gestionar Usuarios</a></li>
+                                {# NUEVO: Enlace a la Gestión de Base de Datos #}
+                                <li><a class="dropdown-item" href="{% url 'exportacion:gestion_bd' %}">Gestión de BD</a></li>
+                                
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> Hola, {{ user.get_full_name|default:user.email }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'usuarios:perfil' pk=user.pk %}">Mi Perfil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            
+                            {# CÓDIGO CORREGIDO PARA CERRAR SESIÓN #}
+                            <li>
+                                <form method="post" action="{% url 'usuarios:logout' %}" class="d-inline">
+                                    {% csrf_token %} 
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        <i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión
+                                    </button>
+                                </form>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                {% else %}
+                    {% comment %} <li class="nav-item">
+                        <a class="nav-link" href="{% url 'usuarios:login' %}"><i class="fas fa-sign-in-alt me-1"></i> Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'usuarios:registro' %}">Registrarse</a>
+                    </li> {% endcomment %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

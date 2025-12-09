@@ -1,0 +1,57 @@
+{# exportacion/templates/exportacion/opciones_exportacion.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Opciones de Exportación{% endblock %}
+
+{% block header_title %}Reporte Inventario{% endblock %}
+
+{% block breadcrumbs %}
+    {% include 'components/breadcrumbs.html' %}
+    <li class="breadcrumb-item active" aria-current="page">Exportación</li>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="fas fa-file-export me-2"></i> Selecciona el Formato de Exportación</h5>
+            </div>
+            <div class="card-body p-4">
+                
+                <p class="lead text-center mb-4">
+                    Selecciona el formato de archivo en el que deseas descargar la información completa del inventario.
+                </p>
+
+                <form method="get" action="{% url 'exportacion:opciones_exportacion' %}" class="row g-3">
+                    
+                    {# Campo oculto para asegurar que la solicitud se procese #}
+                    <input type="hidden" name="action" value="export">
+
+                    <div class="col-12 mb-4">
+                        <label class="form-label fw-bold">Formato de Archivo</label>
+                        <select name="formato" class="form-select form-select-lg" required>
+                            <option value="" disabled selected>--- Seleccionar un formato ---</option>
+                            <option value="excel"><i class="fas fa-file-excel me-2"></i> Microsoft Excel (.xlsx)</option>
+                            <option value="pdf"><i class="fas fa-file-pdf me-2"></i> PDF (Formato de Resumen)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg py-2">
+                            <i class="fas fa-download me-2"></i> Generar y Descargar Reporte
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer text-center py-3">
+                <a href="{% url 'inventario:lista_inventario' %}" class="text-decoration-none">
+                    <i class="fas fa-arrow-left me-1"></i> Volver al Inventario
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

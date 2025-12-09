@@ -1,0 +1,59 @@
+{# exportacion/templates/exportacion/cargar_bd.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cargar Base de Datos{% endblock %}
+
+{% block header_title %}Cargar Archivo de Base de Datos{% endblock %}
+
+{% block breadcrumbs %}
+    {% include 'components/breadcrumbs.html' %}
+    <li class="breadcrumb-item"><a href="{% url 'exportacion:gestion_bd' %}">Gestión BD</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Cargar BD</li>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> Restauración de Base de Datos</h5>
+            </div>
+            <div class="card-body p-4">
+                
+                <p class="lead text-danger text-center mb-4">
+                    ¡ADVERTENCIA! Esta acción es **IRREVERSIBLE**. Al subir un archivo, se **reemplazará** la base de datos actual.
+                </p>
+
+                {# El formulario debe tener enctype="multipart/form-data" para manejar archivos #}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    {# Muestra los campos del formulario #}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label fw-bold">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <div class="form-text">{{ field.help_text|safe }}</div>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <div class="invalid-feedback d-block">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            <i class="fas fa-upload me-2"></i> Subir y Reemplazar Base de Datos
+                        </button>
+                        <a href="{% url 'exportacion:gestion_bd' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-times me-2"></i> Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

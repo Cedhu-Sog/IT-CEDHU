@@ -1,0 +1,32 @@
+{# templates/components/messages.html #}
+{% if messages %}
+    <div class="row mb-3">
+        <div class="col-md-12">
+            
+            {% for message in messages %}
+                
+                {# 1. Determinar la clase de alerta (alert_type) usando bloques IF/ELIF #}
+                {% if 'error' in message.tags or 'danger' in message.tags %}
+                    {% with 'danger' as alert_type %}{% endwith %}
+                {% elif 'warning' in message.tags %}
+                    {% with 'warning' as alert_type %}{% endwith %}
+                {% elif 'success' in message.tags %}
+                    {% with 'success' as alert_type %}{% endwith %}
+                {% elif 'info' in message.tags %}
+                    {% with 'info' as alert_type %}{% endwith %}
+                {% else %}
+                    {# Usar 'secondary' como valor por defecto si el tag no está claro #}
+                    {% with 'secondary' as alert_type %}{% endwith %}
+                {% endif %}
+
+                {# 2. RENDERIZAR el mensaje UNA SOLA VEZ usando la variable alert_type #}
+                <div class="alert alert-{{ alert_type }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            {% endfor %}
+            
+        </div>
+    </div>
+{% endif %}

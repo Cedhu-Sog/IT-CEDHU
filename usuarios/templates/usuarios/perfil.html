@@ -1,0 +1,103 @@
+{# usuarios/templates/usuarios/perfil.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Mi Perfil{% endblock %}
+
+{% block header_title %}Mi Perfil de Usuario{% endblock %}
+
+{% block breadcrumbs %}
+    {% include 'components/breadcrumbs.html' %}
+    <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+        <div class="card shadow-lg border-0 rounded-lg">
+            <div class="card-header bg-light">
+                <h5 class="mb-0 text-dark"><i class="fas fa-id-card me-2"></i> Detalles de la Cuenta</h5>
+            </div>
+            <div class="card-body">
+                
+                <form method="post" action="{% url 'usuarios:perfil' pk=user.pk %}">
+                    {% csrf_token %}
+                    
+                    {# ---------------------------------------------------- #}
+                    {# Mensajes de Error Global (si hay) #}
+                    {# ---------------------------------------------------- #}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for error in form.non_field_errors %}
+                                <p class="mb-0">{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    {# ---------------------------------------------------- #}
+                    {# Campos del Formulario #}
+                    {# ---------------------------------------------------- #}
+                    <div class="row mb-3">
+                        {# Nombre #}
+                        <div class="col-md-6">
+                            <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre</label>
+                            {{ form.nombre }}
+                            {% if form.nombre.errors %}
+                                <small class="text-danger d-block">{{ form.nombre.errors.as_text }}</small>
+                            {% endif %}
+                        </div>
+                        
+                        {# Apellido #}
+                        <div class="col-md-6">
+                            <label for="{{ form.apellido.id_for_label }}" class="form-label">Apellido</label>
+                            {{ form.apellido }}
+                            {% if form.apellido.errors %}
+                                <small class="text-danger d-block">{{ form.apellido.errors.as_text }}</small>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {# Email #}
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Correo Electrónico (No modificable)</label>
+                        {# El campo email generalmente se hace de solo lectura o se maneja con un proceso de verificación separado #}
+                        <input type="email" class="form-control" value="{{ form.email.value }}" readonly>
+                    </div>
+
+                    {# ---------------------------------------------------- #}
+                    {# Información Adicional #}
+                    {# ---------------------------------------------------- #}
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <p class="mb-1 fw-bold">Fecha de Registro:</p>
+                            <p class="text-muted">{{ user.date_joined|date:"d M, Y (H:i)" }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <p class="mb-1 fw-bold">Último Acceso:</p>
+                            <p class="text-muted">{{ user.last_login|default:"Nunca"|date:"d M, Y (H:i)" }}</p>
+                        </div>
+                    </div>
+                    
+                    {# ---------------------------------------------------- #}
+                    {# Botón de Guardar #}
+                    {# ---------------------------------------------------- #}
+                    <div class="mt-4 pt-2 border-top">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-save me-2"></i> Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer py-3">
+                <p class="mb-0">
+                    <a href="{% url 'usuarios:password_reset' %}" class="text-decoration-none">
+                        <i class="fas fa-key me-1"></i> ¿Deseas cambiar tu contraseña?
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

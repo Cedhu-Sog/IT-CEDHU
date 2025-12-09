@@ -1,0 +1,1839 @@
+INFO 2025-10-13 18:27:23,741 autoreload 1080 6892 Watching for file changes with StatReloader
+ERROR 2025-10-13 18:27:27,119 log 1080 2316 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: usuarios/login.html
+WARNING 2025-10-13 18:27:27,283 log 1080 2316 Not Found: /favicon.ico
+INFO 2025-10-13 18:41:26,266 autoreload 9908 7500 Watching for file changes with StatReloader
+ERROR 2025-10-13 18:41:28,041 log 9908 2372 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'elif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'elif', expected 'endwith'. Did you forget to register or load this tag?
+INFO 2025-10-13 18:42:30,422 autoreload 14140 10896 Watching for file changes with StatReloader
+ERROR 2025-10-13 18:42:31,969 log 14140 10196 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'elif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'elif', expected 'endwith'. Did you forget to register or load this tag?
+INFO 2025-10-13 18:43:26,043 autoreload 12808 9776 Watching for file changes with StatReloader
+ERROR 2025-10-13 18:43:27,817 log 12808 11904 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'elif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 11: 'elif', expected 'endwith'. Did you forget to register or load this tag?
+INFO 2025-10-13 18:44:33,700 autoreload 12508 10104 Watching for file changes with StatReloader
+ERROR 2025-10-13 18:44:35,126 log 12508 7164 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'elif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 14: 'elif', expected 'endwith'. Did you forget to register or load this tag?
+ERROR 2025-10-13 18:44:56,411 log 12508 7164 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'elif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader_tags.py", line 199, in render
+    template = context.template.engine.select_template(template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 208, in select_template
+    return self.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\defaulttags.py", line 1540, in do_with
+    nodelist = parser.parse(("endwith",))
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 14: 'elif', expected 'endwith'. Did you forget to register or load this tag?
+INFO 2025-10-13 18:46:13,654 autoreload 6796 12716 Watching for file changes with StatReloader
+INFO 2025-10-13 18:47:30,812 autoreload 7464 3704 Watching for file changes with StatReloader
+ERROR 2025-10-13 18:47:54,503 log 7464 10132 Internal Server Error: /inventario/anadir/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventario/añadir_elemento.html
+ERROR 2025-10-13 18:47:58,412 log 7464 10132 Internal Server Error: /inventario/lista/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventario/lista_inventario.html, inventario/elemento_list.html
+ERROR 2025-10-13 18:48:01,880 log 7464 10132 Internal Server Error: /inventario/lista/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventario/lista_inventario.html, inventario/elemento_list.html
+ERROR 2025-10-13 18:48:03,882 log 7464 10132 Internal Server Error: /inventario/anadir/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventario/añadir_elemento.html
+ERROR 2025-10-13 18:48:08,154 log 7464 10132 Internal Server Error: /exportacion/opciones/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 38, in opciones_exportacion
+    return render(request, 'exportacion/opciones_exportacion.html')
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/opciones_exportacion.html
+WARNING 2025-10-13 18:48:18,631 log 7464 10132 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 18:48:20,152 log 7464 10132 Method Not Allowed (GET): /usuarios/logout/
+INFO 2025-10-13 18:48:27,943 autoreload 7156 12828 Watching for file changes with StatReloader
+WARNING 2025-10-13 18:48:32,858 log 7156 13864 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 18:48:34,173 log 7156 13864 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 18:48:34,767 log 7156 13864 Method Not Allowed (GET): /usuarios/logout/
+INFO 2025-10-13 20:53:20,453 autoreload 1340 16152 Watching for file changes with StatReloader
+WARNING 2025-10-13 20:53:29,879 log 1340 7664 Not Found: /favicon.ico
+ERROR 2025-10-13 20:53:31,285 log 1340 7664 Internal Server Error: /inventario/lista/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventario/lista_inventario.html, inventario/elemento_list.html
+INFO 2025-10-13 20:59:27,745 autoreload 15572 6172 Watching for file changes with StatReloader
+ERROR 2025-10-13 21:01:12,626 log 15572 13148 Internal Server Error: /exportacion/opciones/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 38, in opciones_exportacion
+    return render(request, 'exportacion/opciones_exportacion.html')
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/opciones_exportacion.html
+ERROR 2025-10-13 21:02:05,455 log 15572 13148 Internal Server Error: /exportacion/opciones/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 38, in opciones_exportacion
+    return render(request, 'exportacion/opciones_exportacion.html')
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/opciones_exportacion.html
+ERROR 2025-10-13 21:02:47,448 log 15572 6080 Internal Server Error: /exportacion/opciones/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 38, in opciones_exportacion
+    return render(request, 'exportacion/opciones_exportacion.html')
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/opciones_exportacion.html
+WARNING 2025-10-13 21:02:56,803 log 15572 6080 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:02:58,483 log 15572 6080 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:03:18,519 log 15572 6080 Not Found: /login
+WARNING 2025-10-13 21:03:31,243 log 15572 6080 Not Found: /Login
+WARNING 2025-10-13 21:03:39,297 log 15572 6080 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:03:41,042 log 15572 6080 Method Not Allowed (GET): /usuarios/logout/
+ERROR 2025-10-13 21:05:46,586 log 15572 10912 Internal Server Error: /exportacion/opciones/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 38, in opciones_exportacion
+    return render(request, 'exportacion/opciones_exportacion.html')
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/opciones_exportacion.html
+INFO 2025-10-13 21:07:54,235 autoreload 14572 9940 Watching for file changes with StatReloader
+ERROR 2025-10-13 21:08:00,419 log 14572 5020 Internal Server Error: /exportacion/opciones/
+Traceback (most recent call last):
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 38, in opciones_exportacion
+    return render(request, 'exportacion/opciones_exportacion.html')
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\AppData\Local\Programs\Python\Python314\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/opciones_exportacion.html
+WARNING 2025-10-13 21:08:49,534 log 14572 5020 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:08:50,759 log 14572 5020 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:08:50,907 log 14572 5020 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:08:51,052 log 14572 5020 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-13 21:08:51,187 log 14572 5020 Method Not Allowed (GET): /usuarios/logout/
+INFO 2025-10-14 07:15:04,740 autoreload 1372 14220 Watching for file changes with StatReloader
+WARNING 2025-10-14 07:15:13,263 log 1372 14852 Not Found: /favicon.ico
+WARNING 2025-10-14 07:15:13,278 log 1372 14852 Not Found: /favicon.ico
+INFO 2025-10-14 11:18:39,706 autoreload 10148 9956 Watching for file changes with StatReloader
+INFO 2025-10-14 15:03:36,031 wasyncore 16332 15544 Serving on http://127.0.0.1:8000
+INFO 2025-10-14 15:07:06,826 wasyncore 13160 1668 Serving on http://127.0.0.1:8000
+INFO 2025-10-14 15:20:53,490 wasyncore 14116 11780 Serving on http://0.0.0.0:8080
+INFO 2025-10-14 15:21:07,428 wasyncore 11844 13596 Serving on http://0.0.0.0:8080
+WARNING 2025-10-14 15:25:37,981 log 11844 9448 Not Found: /favicon.ico
+WARNING 2025-10-14 15:26:37,805 log 11844 12260 Not Found: /favicon.ico
+INFO 2025-10-14 15:28:22,093 wasyncore 6772 12248 Serving on http://127.0.0.1:8080
+INFO 2025-10-14 15:31:44,131 wasyncore 16756 8884 Serving on http://0.0.0.0:8080
+ERROR 2025-10-14 15:31:48,278 log 16756 16928 Invalid HTTP_HOST header: '192.168.1.16:8080'. You may need to add '192.168.1.16' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\http\request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.16:8080'. You may need to add '192.168.1.16' to ALLOWED_HOSTS.
+ERROR 2025-10-14 15:31:48,474 log 16756 5732 Invalid HTTP_HOST header: '192.168.1.16:8080'. You may need to add '192.168.1.16' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\http\request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.16:8080'. You may need to add '192.168.1.16' to ALLOWED_HOSTS.
+INFO 2025-10-14 15:33:20,005 wasyncore 10256 14388 Serving on http://0.0.0.0:8080
+WARNING 2025-10-14 15:33:25,681 log 10256 16136 Not Found: /favicon.ico
+WARNING 2025-10-14 15:34:55,571 log 10256 3064 Not Found: /favicon.ico
+WARNING 2025-10-14 15:35:34,689 log 10256 16144 Not Found: /favicon.ico
+WARNING 2025-10-14 15:35:56,558 log 10256 3064 Not Found: /static/admin/css/base.css
+WARNING 2025-10-14 15:35:56,564 log 10256 16136 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-14 15:35:56,607 log 10256 5116 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-14 15:35:56,615 log 10256 3064 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-14 15:35:56,617 log 10256 16144 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-14 15:35:56,624 log 10256 16136 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-14 15:35:56,654 log 10256 5116 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-14 15:35:56,700 log 10256 3064 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-14 15:35:56,707 log 10256 16144 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-14 15:35:56,711 log 10256 16136 Not Found: /static/admin/css/dashboard.css
+INFO 2025-10-14 16:03:26,690 wasyncore 6932 8988 Serving on http://0.0.0.0:8080
+WARNING 2025-10-14 16:03:37,211 log 6932 7364 Not Found: /favicon.ico
+WARNING 2025-10-14 16:04:02,891 log 6932 13808 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-14 16:04:04,221 log 6932 7216 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-14 16:04:07,373 log 6932 7564 Not Found: /static/admin/css/base.css
+WARNING 2025-10-14 16:04:07,379 log 6932 13808 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-14 16:04:07,403 log 6932 7216 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-14 16:04:07,415 log 6932 7364 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-14 16:04:07,419 log 6932 7564 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-14 16:04:07,425 log 6932 13808 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-14 16:04:07,454 log 6932 7216 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-14 16:04:07,463 log 6932 7364 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-14 16:04:07,469 log 6932 7564 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-14 16:04:07,477 log 6932 13808 Not Found: /static/admin/css/responsive.css
+INFO 2025-10-14 16:08:42,818 wasyncore 4884 12764 Serving on http://0.0.0.0:8080
+INFO 2025-10-14 16:09:31,520 wasyncore 12640 9084 Serving on http://0.0.0.0:8080
+WARNING 2025-10-14 16:09:36,503 log 12640 8512 Not Found: /favicon.ico
+INFO 2025-10-14 16:12:01,038 wasyncore 13096 13100 Serving on http://0.0.0.0:8080
+WARNING 2025-10-14 16:12:07,417 log 13096 12200 Not Found: /favicon.ico
+WARNING 2025-10-14 16:12:07,426 log 13096 12212 Not Found: /favicon.ico
+INFO 2025-10-15 07:51:29,942 wasyncore 12976 12980 Serving on http://0.0.0.0:8080
+WARNING 2025-10-15 07:51:38,560 log 12976 13144 Not Found: /favicon.ico
+WARNING 2025-10-15 07:57:50,908 log 12976 13144 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-15 07:57:52,737 log 12976 13148 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-15 07:57:52,946 log 12976 13136 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-15 08:03:48,560 log 12976 13140 Method Not Allowed (GET): /usuarios/logout/
+WARNING 2025-10-15 08:03:57,014 log 12976 13140 Method Not Allowed (GET): /usuarios/logout/
+INFO 2025-10-15 08:04:21,967 autoreload 10212 15252 Watching for file changes with StatReloader
+WARNING 2025-10-15 08:04:24,342 log 10212 13908 Not Found: /favicon.ico
+INFO 2025-10-15 08:06:00,051 autoreload 4448 6572 Watching for file changes with StatReloader
+INFO 2025-10-15 08:08:00,099 autoreload 10856 6656 Watching for file changes with StatReloader
+ERROR 2025-10-15 08:08:48,579 log 10856 9080 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 51: 'endor', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2025-10-15 08:08:48,870 log 10856 9080 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 51: 'endor', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+INFO 2025-10-15 08:09:31,757 autoreload 6228 14792 Watching for file changes with StatReloader
+INFO 2025-10-15 08:10:41,463 autoreload 13624 13596 Watching for file changes with StatReloader
+INFO 2025-10-15 08:18:51,856 autoreload 13624 13596 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\forms.py changed, reloading.
+INFO 2025-10-15 08:18:52,810 autoreload 13528 4492 Watching for file changes with StatReloader
+INFO 2025-10-15 08:19:46,736 autoreload 13528 4492 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\admin.py changed, reloading.
+INFO 2025-10-15 08:19:47,603 autoreload 13876 11368 Watching for file changes with StatReloader
+INFO 2025-10-15 08:19:58,424 autoreload 7756 13924 Watching for file changes with StatReloader
+INFO 2025-10-15 08:20:04,073 autoreload 12884 13724 Watching for file changes with StatReloader
+INFO 2025-10-15 08:27:04,307 autoreload 13616 14488 Watching for file changes with StatReloader
+INFO 2025-10-15 08:33:32,035 autoreload 13616 14488 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\models.py changed, reloading.
+INFO 2025-10-15 08:33:32,987 autoreload 4656 14020 Watching for file changes with StatReloader
+INFO 2025-10-15 08:33:54,385 autoreload 1976 7524 Watching for file changes with StatReloader
+INFO 2025-10-15 08:36:40,703 autoreload 1976 7524 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\admin.py changed, reloading.
+INFO 2025-10-15 08:36:41,673 autoreload 7184 4028 Watching for file changes with StatReloader
+INFO 2025-10-15 08:36:54,633 autoreload 7184 4028 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\forms.py changed, reloading.
+INFO 2025-10-15 08:36:55,464 autoreload 11984 3940 Watching for file changes with StatReloader
+INFO 2025-10-15 08:37:13,015 autoreload 1900 12852 Watching for file changes with StatReloader
+INFO 2025-10-15 09:35:56,309 autoreload 8380 10780 Watching for file changes with StatReloader
+INFO 2025-10-15 09:40:06,982 autoreload 8380 10780 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\models.py changed, reloading.
+INFO 2025-10-15 09:40:07,986 autoreload 10776 16260 Watching for file changes with StatReloader
+INFO 2025-10-15 09:43:03,816 autoreload 10776 16260 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\models.py changed, reloading.
+INFO 2025-10-15 09:43:04,821 autoreload 16024 11612 Watching for file changes with StatReloader
+INFO 2025-10-15 09:43:13,877 autoreload 16024 11612 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\admin.py changed, reloading.
+INFO 2025-10-15 09:43:14,837 autoreload 3616 15628 Watching for file changes with StatReloader
+INFO 2025-10-15 09:43:38,344 autoreload 3616 15628 C:\Users\edwin\Desktop\inventario_tecnologico\usuarios\views.py changed, reloading.
+INFO 2025-10-15 09:43:39,341 autoreload 7388 11044 Watching for file changes with StatReloader
+INFO 2025-10-15 09:45:34,561 autoreload 15080 15844 Watching for file changes with StatReloader
+INFO 2025-10-15 09:48:05,736 autoreload 11756 9484 Watching for file changes with StatReloader
+INFO 2025-10-15 13:57:12,225 wasyncore 13320 13324 Serving on http://0.0.0.0:8080
+WARNING 2025-10-15 14:01:17,127 log 13320 13968 Not Found: /favicon.ico
+INFO 2025-10-15 14:08:52,299 autoreload 8040 13064 Watching for file changes with StatReloader
+WARNING 2025-10-15 14:08:55,296 log 8040 11060 Not Found: /favicon.ico
+INFO 2025-10-15 14:27:30,355 autoreload 10372 9016 Watching for file changes with StatReloader
+INFO 2025-10-15 14:29:05,338 autoreload 10016 12788 Watching for file changes with StatReloader
+WARNING 2025-10-15 14:29:27,137 log 10016 8480 Not Found: /usuarios/registrarse/
+INFO 2025-10-15 14:34:16,021 wasyncore 13676 13144 Serving on http://0.0.0.0:8080
+INFO 2025-10-15 14:34:40,355 wasyncore 7900 4508 Serving on http://0.0.0.0:8080
+INFO 2025-10-15 14:37:05,339 wasyncore 6024 8244 Serving on http://0.0.0.0:8080
+WARNING 2025-10-15 14:37:36,030 log 6024 11104 Not Found: /favicon.ico
+WARNING 2025-10-15 14:38:26,099 log 6024 3496 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:38:26,104 log 6024 9720 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:38:26,123 log 6024 11000 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:38:26,128 log 6024 3496 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:38:26,132 log 6024 9720 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:38:26,137 log 6024 11104 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:38:26,160 log 6024 11000 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:38:26,167 log 6024 3496 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:38:26,172 log 6024 9720 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:38:26,178 log 6024 11104 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:38:53,995 log 6024 9720 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:38:54,001 log 6024 11104 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:38:54,004 task 6024 8244 Task queue depth is 1
+WARNING 2025-10-15 14:38:54,007 log 6024 11000 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:38:54,013 log 6024 3496 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:38:54,020 log 6024 9720 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:38:54,023 log 6024 11104 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:38:54,043 log 6024 11000 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:38:54,050 log 6024 3496 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:38:54,058 log 6024 9720 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:38:54,063 log 6024 11104 Not Found: /static/admin/css/responsive.css
+INFO 2025-10-15 14:41:15,696 wasyncore 784 15160 Serving on http://0.0.0.0:8080
+INFO 2025-10-15 14:41:46,381 wasyncore 4952 4888 Serving on http://127.0.0.1:8000
+INFO 2025-10-15 14:47:33,119 wasyncore 12380 8176 Serving on http://0.0.0.0:8080
+WARNING 2025-10-15 14:48:15,344 log 12380 8052 Not Found: /favicon.ico
+WARNING 2025-10-15 14:49:08,445 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:08,453 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:08,449 log 12380 1744 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:08,453 log 12380 5232 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:08,458 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:08,461 log 12380 5256 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:08,471 log 12380 1744 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:08,474 log 12380 5232 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:08,487 log 12380 1744 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:08,493 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:08,497 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:08,501 log 12380 5232 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,034 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:12,034 log 12380 5256 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,048 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:12,039 log 12380 1744 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,042 log 12380 5232 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:12,048 log 12380 8052 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:12,055 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,062 log 12380 1744 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:12,073 log 12380 5232 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:12,082 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,086 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,090 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,199 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:12,200 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:12,204 log 12380 5256 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:12,210 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,214 log 12380 5232 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:12,217 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,227 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:12,231 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,245 log 12380 1744 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:12,249 log 12380 5256 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,252 log 12380 5232 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,364 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:12,369 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,373 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:12,373 log 12380 5232 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,377 log 12380 1744 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:12,382 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:12,388 log 12380 8052 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:12,397 log 12380 5232 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,405 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,409 log 12380 5256 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,412 log 12380 8052 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:12,528 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:12,533 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:12,537 log 12380 5232 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,538 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:12,543 log 12380 1744 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:12,546 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,556 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,559 log 12380 5232 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:12,574 log 12380 8052 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:12,582 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,587 log 12380 5232 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,584 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,676 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:12,681 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:12,681 log 12380 5232 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:12,684 log 12380 5256 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:12,689 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,692 log 12380 8052 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:12,702 log 12380 5232 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,707 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,715 log 12380 5232 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:12,719 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,832 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:12,834 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:12,838 log 12380 5232 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:12,843 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:12,842 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:12,849 log 12380 1744 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:12,858 log 12380 5256 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:49:12,862 log 12380 5232 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:12,871 log 12380 1744 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:12,873 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:16,513 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:16,515 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:16,520 log 12380 1744 Not Found: /static/admin/css/changelists.css
+WARNING 2025-10-15 14:49:16,531 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:16,527 log 12380 5232 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-15 14:49:16,529 log 12380 8052 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-15 14:49:16,534 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:16,539 log 12380 1744 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:16,548 log 12380 5232 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:16,549 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:16,551 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:16,556 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:16,563 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:16,562 log 12380 1744 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-15 14:49:16,572 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:16,571 log 12380 5232 Not Found: /static/admin/js/core.js
+WARNING 2025-10-15 14:49:16,579 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:16,577 log 12380 8052 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-15 14:49:16,584 log 12380 1744 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-15 14:49:16,589 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:16,597 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:16,597 log 12380 5232 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-15 14:49:16,607 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:16,602 log 12380 1744 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-15 14:49:16,606 log 12380 8052 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:16,612 log 12380 5256 Not Found: /static/admin/img/icon-yes.svg
+WARNING 2025-10-15 14:49:16,621 log 12380 5232 Not Found: /static/admin/img/search.svg
+WARNING 2025-10-15 14:49:16,632 log 12380 8052 Not Found: /static/admin/css/changelists.css
+WARNING 2025-10-15 14:49:16,633 log 12380 1744 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:16,646 log 12380 5256 Not Found: /static/admin/js/filters.js
+WARNING 2025-10-15 14:49:16,653 log 12380 5232 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:16,658 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:16,663 log 12380 1744 Not Found: /static/admin/img/icon-yes.svg
+WARNING 2025-10-15 14:49:25,891 log 12380 5232 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-15 14:49:25,892 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:25,894 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:25,901 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:25,900 log 12380 1744 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:25,905 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:25,909 log 12380 5232 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:25,914 log 12380 8052 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:25,923 log 12380 1744 Not Found: /static/admin/js/SelectBox.js
+WARNING 2025-10-15 14:49:25,930 log 12380 5256 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:25,937 log 12380 8052 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-15 14:49:25,940 log 12380 5232 Not Found: /static/admin/js/SelectFilter2.js
+WARNING 2025-10-15 14:49:25,950 log 12380 1744 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-15 14:49:25,952 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:25,954 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:25,960 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:25,967 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:25,966 log 12380 5232 Not Found: /static/admin/js/core.js
+WARNING 2025-10-15 14:49:25,971 log 12380 1744 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-15 14:49:25,975 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:25,984 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:25,983 log 12380 5232 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-15 14:49:25,987 log 12380 8052 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-15 14:49:25,988 task 12380 8176 Task queue depth is 3
+WARNING 2025-10-15 14:49:25,998 log 12380 1744 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-15 14:49:26,003 log 12380 5256 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-15 14:49:26,005 log 12380 5232 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-15 14:49:26,010 log 12380 8052 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-15 14:49:26,026 log 12380 1744 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:26,033 log 12380 5232 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:26,036 log 12380 8052 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-15 14:49:26,039 log 12380 5256 Not Found: /static/admin/img/icon-addlink.svg
+WARNING 2025-10-15 14:49:34,648 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:34,657 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:34,653 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:34,665 log 12380 8052 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:34,657 log 12380 5232 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:34,666 log 12380 1744 Not Found: /static/admin/css/unusable_password_field.css
+WARNING 2025-10-15 14:49:34,673 log 12380 5256 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-15 14:49:34,675 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:34,681 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:34,690 log 12380 5232 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:34,695 log 12380 1744 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:34,701 log 12380 8052 Not Found: /static/admin/js/unusable_password_field.js
+WARNING 2025-10-15 14:49:57,021 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:57,026 log 12380 1744 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:49:57,031 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:57,030 log 12380 5256 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:49:57,036 log 12380 5232 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:57,041 log 12380 8052 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:49:57,047 log 12380 1744 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-15 14:49:57,055 log 12380 5256 Not Found: /static/admin/js/SelectBox.js
+WARNING 2025-10-15 14:49:57,058 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:57,063 log 12380 1744 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:57,064 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:57,068 log 12380 8052 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-15 14:49:57,074 log 12380 5232 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-15 14:49:57,081 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:57,079 log 12380 5256 Not Found: /static/admin/js/core.js
+WARNING 2025-10-15 14:49:57,087 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:49:57,092 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:57,092 log 12380 8052 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:49:57,097 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:57,102 log 12380 5232 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-15 14:49:57,103 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:49:57,108 log 12380 5256 Not Found: /static/admin/js/SelectFilter2.js
+WARNING 2025-10-15 14:49:57,114 log 12380 8052 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-15 14:49:57,115 task 12380 8176 Task queue depth is 3
+WARNING 2025-10-15 14:49:57,126 log 12380 5232 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-15 14:49:57,131 log 12380 8052 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-15 14:49:57,134 log 12380 5256 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-15 14:49:57,139 log 12380 1744 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-15 14:49:57,154 log 12380 5232 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:49:57,158 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:49:57,162 log 12380 5256 Not Found: /static/admin/img/icon-addlink.svg
+WARNING 2025-10-15 14:49:57,168 log 12380 1744 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-15 14:50:40,786 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:50:40,791 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:50:40,791 log 12380 1744 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:50:40,797 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:50:40,801 log 12380 5232 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:50:40,807 log 12380 5256 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:50:40,813 log 12380 1744 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:50:40,818 log 12380 8052 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:50:40,832 log 12380 5256 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:50:40,834 log 12380 5232 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:51:36,239 log 12380 1744 Not Found: /favicon.ico
+WARNING 2025-10-15 14:52:06,695 task 12380 8176 Task queue depth is 1
+WARNING 2025-10-15 14:52:06,702 log 12380 8052 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:52:06,706 task 12380 8176 Task queue depth is 2
+WARNING 2025-10-15 14:52:06,709 log 12380 5232 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:52:06,706 log 12380 5256 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:52:06,715 log 12380 1744 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:52:06,721 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:52:06,730 log 12380 5232 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:52:06,754 log 12380 5256 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:52:06,760 log 12380 1744 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:52:06,766 log 12380 8052 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:52:06,771 log 12380 5232 Not Found: /static/admin/css/dashboard.css
+INFO 2025-10-15 14:52:24,402 autoreload 4188 13852 Watching for file changes with StatReloader
+INFO 2025-10-15 14:54:08,825 wasyncore 14904 11512 Serving on http://0.0.0.0:8080
+WARNING 2025-10-15 14:54:37,172 log 14904 14244 Not Found: /static/img/placeholders/no-image.png
+WARNING 2025-10-15 14:54:42,483 log 14904 12260 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:54:42,489 log 14904 14244 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:54:42,496 task 14904 11512 Task queue depth is 1
+WARNING 2025-10-15 14:54:42,493 log 14904 4960 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:54:42,502 log 14904 6644 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:54:42,507 log 14904 12260 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:54:42,512 log 14904 14244 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:54:42,540 log 14904 4960 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:55:21,335 task 14904 11512 Task queue depth is 1
+WARNING 2025-10-15 14:55:21,339 task 14904 11512 Task queue depth is 2
+WARNING 2025-10-15 14:55:21,339 log 14904 6644 Not Found: /static/admin/css/base.css
+WARNING 2025-10-15 14:55:21,343 log 14904 12260 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-15 14:55:21,352 log 14904 14244 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:55:21,356 log 14904 4960 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-15 14:55:21,363 log 14904 6644 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:55:21,368 log 14904 14244 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-15 14:55:21,380 log 14904 12260 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-15 14:55:21,388 log 14904 4960 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-15 14:55:21,392 log 14904 14244 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-15 14:55:21,398 log 14904 6644 Not Found: /static/admin/css/dashboard.css
+INFO 2025-10-15 22:53:19,534 wasyncore 2536 8024 Serving on http://0.0.0.0:8080
+INFO 2025-10-16 07:50:01,381 wasyncore 3208 10192 Serving on http://0.0.0.0:8080
+WARNING 2025-10-16 07:50:11,242 log 3208 9760 Not Found: /favicon.ico
+WARNING 2025-10-16 07:50:14,666 log 3208 2940 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:50:14,673 log 3208 9760 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:50:14,682 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:14,677 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:50:14,686 log 3208 2940 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:50:14,682 log 3208 12808 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:50:14,692 log 3208 9760 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:50:14,703 log 3208 2940 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:50:14,709 log 3208 11556 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:50:14,714 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:50:14,716 log 3208 9760 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:50:32,454 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:32,457 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,459 log 3208 11556 Not Found: /static/admin/css/changelists.css
+WARNING 2025-10-16 07:50:32,464 log 3208 12808 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:50:32,468 log 3208 9760 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-16 07:50:32,473 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:32,474 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,478 log 3208 12808 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:50:32,484 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,483 log 3208 11556 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-16 07:50:32,489 task 3208 10192 Task queue depth is 3
+WARNING 2025-10-16 07:50:32,488 log 3208 9760 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:50:32,492 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,497 log 3208 12808 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:50:32,498 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,503 log 3208 11556 Not Found: /static/admin/js/core.js
+WARNING 2025-10-16 07:50:32,510 log 3208 9760 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-16 07:50:32,511 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,515 log 3208 12808 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:50:32,518 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:32,528 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:32,524 log 3208 9760 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-16 07:50:32,533 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,528 log 3208 11556 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-16 07:50:32,535 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:32,533 log 3208 12808 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:50:32,541 log 3208 9760 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-16 07:50:32,550 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:50:32,554 log 3208 12808 Not Found: /static/admin/css/changelists.css
+WARNING 2025-10-16 07:50:32,566 log 3208 9760 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:50:32,571 log 3208 11556 Not Found: /static/admin/js/filters.js
+WARNING 2025-10-16 07:50:32,577 log 3208 2940 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:50:43,781 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:43,786 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,792 log 3208 12808 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:50:43,802 log 3208 9760 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-16 07:50:43,809 log 3208 2940 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:50:43,812 log 3208 11556 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:50:43,824 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,823 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:50:43,834 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:43,839 log 3208 9760 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-16 07:50:43,849 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,846 log 3208 2940 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:50:43,853 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,850 log 3208 12808 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-16 07:50:43,862 log 3208 9760 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-16 07:50:43,864 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,867 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:50:43,882 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,876 log 3208 9760 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-16 07:50:43,881 log 3208 12808 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-16 07:50:43,888 log 3208 2940 Not Found: /static/admin/js/core.js
+WARNING 2025-10-16 07:50:43,898 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:50:43,921 log 3208 2940 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-16 07:50:43,933 log 3208 12808 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:50:43,934 log 3208 9760 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-16 07:50:43,946 log 3208 2940 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-16 07:50:43,968 log 3208 11556 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:50:43,975 log 3208 12808 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-16 07:50:43,981 log 3208 9760 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:29,879 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:29,878 log 3208 11556 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:52:29,883 log 3208 12808 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:52:29,892 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:29,888 log 3208 2940 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:52:29,891 log 3208 9760 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:29,900 log 3208 11556 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:29,905 log 3208 12808 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:52:29,919 log 3208 2940 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:52:29,926 log 3208 11556 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:29,929 log 3208 9760 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:52:29,934 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:34,207 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,213 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:34,212 log 3208 11556 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:52:34,218 log 3208 12808 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:52:34,220 log 3208 2940 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-16 07:52:34,223 log 3208 9760 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:52:34,228 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,233 log 3208 11556 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:52:34,239 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:34,250 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,249 log 3208 2940 Not Found: /static/admin/css/unusable_password_field.css
+WARNING 2025-10-16 07:52:34,264 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,260 log 3208 12808 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-16 07:52:34,264 log 3208 11556 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:34,272 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:34,270 log 3208 2940 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-16 07:52:34,277 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:34,280 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:34,284 log 3208 12808 Not Found: /static/admin/js/core.js
+WARNING 2025-10-16 07:52:34,291 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,289 log 3208 11556 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-16 07:52:34,299 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,296 log 3208 2940 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-16 07:52:34,304 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:34,302 log 3208 9760 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-16 07:52:34,308 log 3208 12808 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-16 07:52:34,319 log 3208 2940 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-16 07:52:34,320 log 3208 11556 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-16 07:52:34,335 log 3208 9760 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:52:34,337 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:34,342 log 3208 12808 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-16 07:52:34,347 log 3208 2940 Not Found: /static/admin/css/unusable_password_field.css
+WARNING 2025-10-16 07:52:34,353 log 3208 11556 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:34,358 log 3208 9760 Not Found: /static/admin/js/unusable_password_field.js
+WARNING 2025-10-16 07:52:37,771 log 3208 2940 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:52:37,776 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:37,784 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:37,783 log 3208 9760 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:52:37,790 log 3208 2940 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:52:37,793 log 3208 12808 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:37,800 log 3208 11556 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:52:37,818 log 3208 9760 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:52:37,822 log 3208 12808 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:52:37,825 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:37,833 log 3208 2940 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:43,483 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,487 log 3208 12808 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:52:43,496 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:43,492 log 3208 2940 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:52:43,496 log 3208 11556 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:52:43,503 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:43,501 log 3208 9760 Not Found: /static/admin/js/SelectBox.js
+WARNING 2025-10-16 07:52:43,508 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:43,511 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,515 log 3208 2940 Not Found: /static/admin/js/SelectFilter2.js
+WARNING 2025-10-16 07:52:43,520 log 3208 11556 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-16 07:52:43,526 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,531 log 3208 9760 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:43,534 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,540 log 3208 2940 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-16 07:52:43,541 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,547 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:43,547 log 3208 9760 Not Found: /static/admin/js/core.js
+WARNING 2025-10-16 07:52:43,552 log 3208 11556 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-16 07:52:43,557 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:43,561 log 3208 2940 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-16 07:52:43,565 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:43,573 log 3208 9760 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-16 07:52:43,575 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,580 log 3208 11556 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-16 07:52:43,586 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:43,584 log 3208 2940 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:52:43,591 log 3208 12808 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-16 07:52:43,599 log 3208 9760 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-16 07:52:43,609 log 3208 12808 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:43,616 log 3208 9760 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-16 07:52:43,614 log 3208 2940 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:52:48,818 log 3208 12808 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:52:48,822 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,827 log 3208 9760 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:52:48,838 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,832 log 3208 2940 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:52:48,837 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:48,845 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,844 log 3208 12808 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-16 07:52:48,850 log 3208 9760 Not Found: /static/admin/css/changelists.css
+WARNING 2025-10-16 07:52:48,852 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:48,858 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,860 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,871 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:48,864 log 3208 11556 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:48,871 log 3208 9760 Not Found: /static/admin/js/core.js
+WARNING 2025-10-16 07:52:48,877 log 3208 12808 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-16 07:52:48,880 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:52:48,889 log 3208 11556 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-16 07:52:48,891 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,897 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:52:48,901 log 3208 9760 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-16 07:52:48,906 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:52:48,910 log 3208 11556 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-16 07:52:48,917 log 3208 2940 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-16 07:52:48,923 log 3208 12808 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:52:48,928 log 3208 9760 Not Found: /static/admin/img/search.svg
+WARNING 2025-10-16 07:52:48,937 log 3208 11556 Not Found: /static/admin/img/icon-yes.svg
+WARNING 2025-10-16 07:52:48,946 log 3208 2940 Not Found: /static/admin/js/filters.js
+WARNING 2025-10-16 07:52:48,950 log 3208 12808 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:52:48,955 log 3208 9760 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:53:10,124 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:10,129 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:53:10,128 log 3208 2940 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:53:10,134 log 3208 9760 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:53:10,138 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:10,145 log 3208 12808 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:53:10,153 log 3208 2940 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:53:10,159 log 3208 9760 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:53:10,165 log 3208 11556 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:53:10,174 log 3208 2940 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:10,182 log 3208 9760 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:53:10,182 log 3208 12808 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:53:10,794 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:10,800 log 3208 9760 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:53:10,810 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:53:10,805 log 3208 2940 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:53:10,808 log 3208 11556 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:53:10,813 log 3208 12808 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:53:10,821 log 3208 9760 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:10,829 log 3208 2940 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:53:10,837 log 3208 2940 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:53:10,841 log 3208 12808 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:53:10,846 log 3208 9760 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:16,273 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,278 log 3208 2940 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:53:16,286 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:53:16,282 log 3208 12808 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:53:16,286 log 3208 9760 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:53:16,289 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:16,296 log 3208 2940 Not Found: /static/admin/css/forms.css
+WARNING 2025-10-16 07:53:16,300 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,306 log 3208 9760 Not Found: /static/admin/css/unusable_password_field.css
+WARNING 2025-10-16 07:53:16,312 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,311 log 3208 11556 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:53:16,319 log 3208 2940 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-16 07:53:16,322 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,327 log 3208 9760 Not Found: /static/admin/js/core.js
+WARNING 2025-10-16 07:53:16,331 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,344 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,339 log 3208 11556 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-16 07:53:16,355 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:53:16,344 log 3208 2940 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-16 07:53:16,355 log 3208 12808 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-16 07:53:16,351 log 3208 9760 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:53:16,359 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:53:16,365 log 3208 11556 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-16 07:53:16,373 log 3208 2940 Not Found: /static/admin/js/vendor/xregexp/xregexp.js
+WARNING 2025-10-16 07:53:16,377 log 3208 12808 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-16 07:53:16,390 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:16,393 log 3208 9760 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2025-10-16 07:53:16,403 log 3208 12808 Not Found: /static/admin/css/unusable_password_field.css
+WARNING 2025-10-16 07:53:16,398 log 3208 11556 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-16 07:53:16,407 log 3208 2940 Not Found: /static/admin/js/unusable_password_field.js
+WARNING 2025-10-16 07:53:16,417 log 3208 9760 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:53:27,661 log 3208 11556 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:53:28,673 log 3208 9760 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-16 07:53:30,911 task 3208 10192 Task queue depth is 1
+WARNING 2025-10-16 07:53:30,916 log 3208 12808 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:30,928 task 3208 10192 Task queue depth is 2
+WARNING 2025-10-16 07:53:30,919 log 3208 11556 Not Found: /static/admin/css/base.css
+WARNING 2025-10-16 07:53:30,924 log 3208 2940 Not Found: /static/admin/js/theme.js
+WARNING 2025-10-16 07:53:30,927 log 3208 9760 Not Found: /static/admin/css/dark_mode.css
+WARNING 2025-10-16 07:53:30,938 log 3208 12808 Not Found: /static/admin/css/dashboard.css
+WARNING 2025-10-16 07:53:30,943 log 3208 2940 Not Found: /static/admin/css/responsive.css
+WARNING 2025-10-16 07:53:30,950 log 3208 11556 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2025-10-16 07:53:30,956 log 3208 9760 Not Found: /static/admin/js/nav_sidebar.js
+INFO 2025-10-17 14:27:09,759 wasyncore 11348 8716 Serving on http://0.0.0.0:8080
+INFO 2025-10-17 14:27:57,335 autoreload 1628 8948 Watching for file changes with StatReloader
+WARNING 2025-10-17 14:28:00,471 log 1628 12104 Not Found: /favicon.ico
+INFO 2025-10-17 19:00:53,306 wasyncore 11936 13436 Serving on http://0.0.0.0:8080
+INFO 2025-10-18 11:58:43,866 wasyncore 15004 644 Serving on http://0.0.0.0:8080
+INFO 2025-10-18 12:16:20,174 wasyncore 16252 16248 Serving on http://0.0.0.0:8080
+INFO 2025-10-18 17:18:58,925 wasyncore 13812 1916 Serving on http://0.0.0.0:8080
+INFO 2025-10-20 07:02:07,682 wasyncore 14072 8272 Serving on http://0.0.0.0:8080
+INFO 2025-10-20 08:01:33,665 autoreload 13904 10068 Watching for file changes with StatReloader
+WARNING 2025-10-20 08:01:36,072 log 13904 13976 Not Found: /favicon.ico
+INFO 2025-10-20 08:02:57,751 wasyncore 12952 5996 Serving on http://0.0.0.0:8080
+WARNING 2025-10-20 08:03:02,451 log 12952 2656 Not Found: /favicon.ico
+ERROR 2025-10-20 08:04:03,012 log 12952 1868 Internal Server Error: /exportacion/cargar-bd/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 165, in get
+    return render(request, 'exportacion/cargar_bd.html', {'form': form})
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/cargar_bd.html
+INFO 2025-10-20 08:13:25,396 autoreload 10488 16904 Watching for file changes with StatReloader
+WARNING 2025-10-20 08:13:27,092 log 10488 3876 Not Found: /favicon.ico
+ERROR 2025-10-20 08:13:31,328 log 10488 3876 Internal Server Error: /exportacion/cargar-bd/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 166, in get
+    return render(request, 'exportacion/cargar_bd.html', {'form': form})
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/cargar_bd.html
+INFO 2025-10-20 08:13:57,809 autoreload 11784 9424 Watching for file changes with StatReloader
+ERROR 2025-10-20 08:14:02,169 log 11784 4704 Internal Server Error: /exportacion/cargar-bd/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 166, in get
+    return render(request, 'exportacion/cargar_bd.html', {'form': form})
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/cargar_bd.html
+INFO 2025-10-20 08:14:41,076 autoreload 4336 10456 Watching for file changes with StatReloader
+WARNING 2025-10-20 08:14:42,684 log 4336 15084 Not Found: /favicon.ico
+ERROR 2025-10-20 08:14:45,879 log 4336 15084 Internal Server Error: /exportacion/cargar-bd/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 166, in get
+    return render(request, 'exportacion/cargar_bd.html', {'form': form})
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/cargar_bd.html
+WARNING 2025-10-20 08:15:21,498 log 4336 15532 Not Found: /favicon.ico
+ERROR 2025-10-20 08:15:24,888 log 4336 15532 Internal Server Error: /exportacion/cargar-bd/
+Traceback (most recent call last):
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\exportacion\views.py", line 166, in get
+    return render(request, 'exportacion/cargar_bd.html', {'form': form})
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\edwin\Desktop\inventario_tecnologico\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: exportacion/cargar_bd.html
+INFO 2025-10-20 08:15:48,862 autoreload 16336 6116 Watching for file changes with StatReloader
+WARNING 2025-10-20 08:15:50,897 log 16336 5844 Not Found: /favicon.ico
+INFO 2025-10-20 09:02:39,102 autoreload 14868 15416 Watching for file changes with StatReloader
+WARNING 2025-10-20 09:02:42,798 log 14868 6676 Not Found: /favicon.ico
+INFO 2025-10-20 18:08:13,421 wasyncore 5996 5912 Serving on http://0.0.0.0:8080
+INFO 2025-10-22 09:23:42,353 wasyncore 10144 6912 Serving on http://0.0.0.0:8080
+INFO 2025-10-22 17:55:36,806 wasyncore 12356 15112 Serving on http://0.0.0.0:8080
+INFO 2025-10-23 07:08:45,210 wasyncore 16332 16336 Serving on http://0.0.0.0:8080
+INFO 2025-10-24 14:19:57,236 wasyncore 15624 4144 Serving on http://0.0.0.0:8080
+INFO 2025-10-26 11:04:18,890 wasyncore 16004 4344 Serving on http://0.0.0.0:8080
+INFO 2025-10-26 17:23:46,116 wasyncore 15632 13376 Serving on http://0.0.0.0:8080
+INFO 2025-10-28 06:56:42,284 wasyncore 17864 17868 Serving on http://0.0.0.0:8080
+INFO 2025-10-28 19:03:40,957 wasyncore 14044 13268 Serving on http://0.0.0.0:8080
+INFO 2025-10-29 06:46:30,665 wasyncore 9224 13180 Serving on http://0.0.0.0:8080
+INFO 2025-10-29 14:47:47,420 wasyncore 3364 19020 Serving on http://0.0.0.0:8080
+INFO 2025-10-30 14:03:26,915 wasyncore 13936 13940 Serving on http://0.0.0.0:8080
+INFO 2025-10-31 15:18:46,122 wasyncore 14104 14108 Serving on http://0.0.0.0:8080
+INFO 2025-11-02 17:05:52,382 wasyncore 13016 7588 Serving on http://0.0.0.0:8080
+INFO 2025-11-03 17:40:23,946 wasyncore 3168 9424 Serving on http://0.0.0.0:8080
+INFO 2025-11-04 07:31:57,009 wasyncore 11184 14908 Serving on http://0.0.0.0:8080
+INFO 2025-11-04 22:19:06,874 wasyncore 2072 18076 Serving on http://0.0.0.0:8080
+INFO 2025-11-05 07:03:11,198 wasyncore 6868 10872 Serving on http://0.0.0.0:8080
+INFO 2025-11-06 16:27:46,724 wasyncore 4132 3860 Serving on http://0.0.0.0:8080
+INFO 2025-11-06 19:42:12,617 wasyncore 17940 14532 Serving on http://0.0.0.0:8080
+INFO 2025-11-07 08:25:49,820 wasyncore 18608 6940 Serving on http://0.0.0.0:8080
+INFO 2025-11-07 14:01:51,571 wasyncore 7248 9288 Serving on http://0.0.0.0:8080
+INFO 2025-11-07 15:02:41,124 wasyncore 14656 7084 Serving on http://0.0.0.0:8080
+INFO 2025-11-07 15:18:21,425 wasyncore 2012 916 Serving on http://0.0.0.0:8080
+INFO 2025-11-08 22:44:36,395 wasyncore 9872 6476 Serving on http://0.0.0.0:8080
+INFO 2025-11-10 07:53:45,484 wasyncore 3992 6668 Serving on http://0.0.0.0:8080
+INFO 2025-11-10 19:07:07,614 wasyncore 9116 2924 Serving on http://0.0.0.0:8080
+INFO 2025-11-11 07:12:02,170 wasyncore 4068 10784 Serving on http://0.0.0.0:8080
+INFO 2025-11-11 19:20:34,304 wasyncore 14220 14224 Serving on http://0.0.0.0:8080
+INFO 2025-11-11 22:28:11,241 wasyncore 14056 7184 Serving on http://0.0.0.0:8080
+INFO 2025-11-12 17:59:31,047 wasyncore 14276 14280 Serving on http://0.0.0.0:8080
+INFO 2025-11-13 18:51:51,737 wasyncore 11608 8060 Serving on http://0.0.0.0:8080
+INFO 2025-11-13 19:26:59,594 wasyncore 6476 3828 Serving on http://0.0.0.0:8080
+INFO 2025-11-14 16:06:10,966 wasyncore 9228 13464 Serving on http://0.0.0.0:8080
+INFO 2025-11-14 19:48:34,460 wasyncore 17156 9540 Serving on http://0.0.0.0:8080
+INFO 2025-11-15 15:58:11,276 wasyncore 9436 14708 Serving on http://0.0.0.0:8080
+INFO 2025-11-17 15:31:22,070 wasyncore 8272 14184 Serving on http://0.0.0.0:8080
+INFO 2025-11-18 16:35:05,949 wasyncore 13616 13620 Serving on http://0.0.0.0:8080
+INFO 2025-11-18 18:35:24,976 wasyncore 5664 9164 Serving on http://0.0.0.0:8080
+INFO 2025-11-19 11:54:43,030 wasyncore 14052 14532 Serving on http://0.0.0.0:8080
+INFO 2025-11-19 18:20:08,996 wasyncore 12836 12392 Serving on http://0.0.0.0:8080
+INFO 2025-11-20 08:31:41,458 wasyncore 14556 2668 Serving on http://0.0.0.0:8080
+INFO 2025-11-21 10:40:08,753 wasyncore 14044 9712 Serving on http://0.0.0.0:8080
+INFO 2025-11-22 16:59:56,077 wasyncore 3236 15428 Serving on http://0.0.0.0:8080
+INFO 2025-11-23 12:34:40,743 wasyncore 17756 13972 Serving on http://0.0.0.0:8080
+INFO 2025-11-24 07:08:50,853 wasyncore 13556 7388 Serving on http://0.0.0.0:8080
+INFO 2025-11-24 09:08:22,010 autoreload 13432 1720 Watching for file changes with StatReloader
+INFO 2025-11-24 19:03:21,136 wasyncore 20216 10708 Serving on http://0.0.0.0:8080
+INFO 2025-11-25 07:00:58,081 wasyncore 11372 22380 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 05:32:52,013 wasyncore 5468 5272 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 07:05:07,352 wasyncore 8040 13140 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 07:14:15,431 wasyncore 15648 15244 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 14:19:58,224 wasyncore 21400 18828 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 14:24:05,654 autoreload 18304 17440 Watching for file changes with StatReloader
+WARNING 2025-11-26 14:24:14,468 log 18304 9048 Not Found: /favicon.ico
+INFO 2025-11-26 14:24:47,872 wasyncore 17972 13260 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 14:25:25,122 wasyncore 1272 2456 Serving on http://0.0.0.0:8080
+WARNING 2025-11-26 14:25:51,343 log 1272 14600 Not Found: /favicon.ico
+INFO 2025-11-26 14:31:32,863 wasyncore 17232 16548 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 14:38:54,969 wasyncore 872 8832 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 14:51:20,710 wasyncore 14384 9976 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 14:58:43,725 wasyncore 14496 14500 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 15:11:04,202 autoreload 20676 20672 Watching for file changes with StatReloader
+WARNING 2025-11-26 15:11:08,032 log 20676 20544 Not Found: /favicon.ico
+WARNING 2025-11-26 15:11:26,033 log 20676 12228 Not Found: /favicon.ico
+WARNING 2025-11-26 15:12:31,567 log 20676 2808 Not Found: /favicon.ico
+WARNING 2025-11-26 15:14:20,961 log 20676 15816 Not Found: /favicon.ico
+WARNING 2025-11-26 15:14:53,794 log 20676 17308 Not Found: /favicon.ico
+WARNING 2025-11-26 15:34:48,496 log 20676 2372 Forbidden (CSRF token from POST incorrect.): /usuarios/login/
+WARNING 2025-11-26 15:38:04,937 log 20676 16620 Not Found: /favicon.ico
+WARNING 2025-11-26 15:48:17,398 log 20676 21064 Not Found: /favicon.ico
+WARNING 2025-11-26 16:37:16,719 log 20676 18820 Forbidden (CSRF token from POST incorrect.): /usuarios/login/
+WARNING 2025-11-26 16:37:38,977 log 20676 21076 Forbidden (CSRF token from POST incorrect.): /usuarios/login/
+WARNING 2025-11-26 16:39:46,428 log 20676 19664 Not Found: /favicon.ico
+INFO 2025-11-26 17:05:13,499 wasyncore 8956 19612 Serving on http://0.0.0.0:8080
+INFO 2025-11-26 17:18:54,824 autoreload 11748 10776 Watching for file changes with StatReloader
+WARNING 2025-11-26 17:18:57,982 log 11748 7672 Not Found: /favicon.ico
+INFO 2025-11-27 09:34:31,690 wasyncore 3616 8788 Serving on http://0.0.0.0:8080
+WARNING 2025-11-27 09:34:46,259 log 3616 18628 Not Found: /favicon.ico
+INFO 2025-12-05 07:51:49,496 autoreload 8492 8680 Watching for file changes with StatReloader
+WARNING 2025-12-05 07:51:52,266 log 8492 5356 Not Found: /favicon.ico
+INFO 2025-12-09 14:11:59,751 autoreload 13824 6772 Watching for file changes with StatReloader
+ERROR 2025-12-09 14:20:08,038 log 13824 14148 Internal Server Error: /usuarios/password_reset/
+Traceback (most recent call last):
+  File "C:\Users\Cedhu IT\Downloads\inventario_tecnologico\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Cedhu IT\Downloads\inventario_tecnologico\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Cedhu IT\Downloads\inventario_tecnologico\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cedhu IT\Downloads\inventario_tecnologico\env\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Cedhu IT\Downloads\inventario_tecnologico\env\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Cedhu IT\Downloads\inventario_tecnologico\env\Lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: usuarios/password_reset_form.html
+INFO 2025-12-09 14:43:48,621 autoreload 13824 6772 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:44:48,846 autoreload 13376 15144 Watching for file changes with StatReloader
+INFO 2025-12-09 14:45:36,972 autoreload 13376 15144 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:45:37,863 autoreload 7812 2468 Watching for file changes with StatReloader
+INFO 2025-12-09 14:45:52,214 autoreload 7812 2468 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:45:52,973 autoreload 14880 4080 Watching for file changes with StatReloader
+INFO 2025-12-09 14:46:11,606 autoreload 14880 4080 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:46:12,391 autoreload 14000 13640 Watching for file changes with StatReloader
+INFO 2025-12-09 14:46:14,344 autoreload 14000 13640 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:46:15,088 autoreload 7388 14212 Watching for file changes with StatReloader
+INFO 2025-12-09 14:46:16,847 autoreload 7388 14212 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:46:17,728 autoreload 6912 8028 Watching for file changes with StatReloader
+INFO 2025-12-09 14:46:34,315 autoreload 6912 8028 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:46:35,107 autoreload 1808 3480 Watching for file changes with StatReloader
+INFO 2025-12-09 14:54:00,068 autoreload 1808 3480 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario_tecnologico\settings.py changed, reloading.
+INFO 2025-12-09 14:54:05,583 autoreload 14928 12664 Watching for file changes with StatReloader
+WARNING 2025-12-09 14:59:12,230 log 14928 8180 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2025-12-09 15:22:28,898 autoreload 14396 14780 Watching for file changes with StatReloader
+INFO 2025-12-09 15:35:57,718 autoreload 14396 14780 C:\Users\Cedhu IT\Downloads\inventario_tecnologico\inventario\admin.py changed, reloading.
+INFO 2025-12-09 15:35:58,552 autoreload 13972 4352 Watching for file changes with StatReloader
+INFO 2025-12-09 15:53:26,397 autoreload 4436 14144 Watching for file changes with StatReloader
+INFO 2025-12-09 16:30:45,000 autoreload 1368 10004 Watching for file changes with StatReloader

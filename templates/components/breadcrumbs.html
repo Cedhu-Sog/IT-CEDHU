@@ -1,0 +1,15 @@
+{# components/breadcrumbs.html #}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {# El Dashboard es el punto de partida fijo #}
+        <li class="breadcrumb-item">
+            <a href="{% url 'inventario:dashboard' %}"><i class="fas fa-home me-1"></i> Inicio</a>
+        </li>
+        
+        {# Bloque que debe ser sobrescrito por cada template hijo #}
+        {% block breadcrumbs %}
+            {# Ejemplo de cómo se vería un breadcrumb si no se sobrescribe: #}
+            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        {% endblock %}
+    </ol>
+</nav>
