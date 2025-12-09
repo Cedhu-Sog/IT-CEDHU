@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m_k8*j_j^z@h8^t@3v$3@z(97!g^c2b0-x(0g-i0^77^$l*^'
 
 # Modo de depuración. Desactivar en producción.
-DEBUG = True
+DEBUG = False
 
 # Hosts permitidos para servir el proyecto.
 ALLOWED_HOSTS = [
