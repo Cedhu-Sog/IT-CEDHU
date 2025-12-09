@@ -152,8 +152,7 @@ STATICFILES_DIRS = [
 ]
 
 # Directorio donde se recogerán todos los estáticos para producción (ejecutar collectstatic)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
-
+STATIC_ROOT = '/home/patarroyoalexis/inventario_tecnologico/staticfiles'
 # URL y directorio de archivos subidos por el usuario (MEDIA)
 MEDIA_URL = '/media/'
 # Directorio físico donde se guardarán los archivos subidos (inventario_tecnologico/media/)

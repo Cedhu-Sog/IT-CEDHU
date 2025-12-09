@@ -1837,3 +1837,14 @@ INFO 2025-12-09 15:35:57,718 autoreload 14396 14780 C:\Users\Cedhu IT\Downloads\
 INFO 2025-12-09 15:35:58,552 autoreload 13972 4352 Watching for file changes with StatReloader
 INFO 2025-12-09 15:53:26,397 autoreload 4436 14144 Watching for file changes with StatReloader
 INFO 2025-12-09 16:30:45,000 autoreload 1368 10004 Watching for file changes with StatReloader
+ERROR 2025-12-09 17:29:36,299 log 3145 133798225273152 Invalid HTTP_HOST header: '192.168.1.250'. You may need to add '192.168.1.250' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/patarroyoalexis/inventario_tecnologico/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/patarroyoalexis/inventario_tecnologico/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/patarroyoalexis/inventario_tecnologico/venv/lib/python3.13/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/patarroyoalexis/inventario_tecnologico/venv/lib/python3.13/site-packages/django/http/request.py", line 202, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.250'. You may need to add '192.168.1.250' to ALLOWED_HOSTS.
