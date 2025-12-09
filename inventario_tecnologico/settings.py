@@ -19,10 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m_k8*j_j^z@h8^t@3v$3@z(97!g^c2b0-x(0g-i0^77^$l*^'
 
 # Modo de depuración. Desactivar en producción.
-DEBUG = True
+DEBUG = False
 
 # Hosts permitidos para servir el proyecto.
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.250',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # ==============================================================================
@@ -153,6 +157,10 @@ STATICFILES_DIRS = [
 
 # Directorio donde se recogerán todos los estáticos para producción (ejecutar collectstatic)
 STATIC_ROOT = '/home/patarroyoalexis/inventario_tecnologico/staticfiles'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 70326c32fd8946cb9b80cc11953e15cc6263a194
 # URL y directorio de archivos subidos por el usuario (MEDIA)
 MEDIA_URL = '/media/'
 # Directorio físico donde se guardarán los archivos subidos (inventario_tecnologico/media/)
