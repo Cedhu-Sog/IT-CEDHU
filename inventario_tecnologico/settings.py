@@ -1,7 +1,3 @@
-sudo systemctl restart gunicorn
-sudo systemctl restart nginx
-sudo systemctl restart gunicorn
-sudo systemctl restart nginx
 """
 Configuración de Django para el proyecto inventario_tecnologico.
 """
