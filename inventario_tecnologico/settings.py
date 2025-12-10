@@ -1,3 +1,7 @@
+sudo systemctl restart gunicorn
+sudo systemctl restart nginx
+sudo systemctl restart gunicorn
+sudo systemctl restart nginx
 """
 Configuración de Django para el proyecto inventario_tecnologico.
 """
@@ -16,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ADVERTENCIA: ¡Mantén la clave secreta usada en producción en secreto!
 # Por motivos de ejemplo, se usa una clave de desarrollo simple.
 # En un proyecto real, esto debe cargarse desde variables de entorno.
-SECRET_KEY = 'django-insecure-m_k8*j_j^z@h8^t@3v$3@z(97!g^c2b0-x(0g-i0^77^$l*^'
+import os
+
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # Modo de depuración. Desactivar en producción.
 DEBUG = False
@@ -24,8 +30,12 @@ DEBUG = False
 # Hosts permitidos para servir el proyecto.
 ALLOWED_HOSTS = [
     '192.168.1.250',
-    'localhost',
-    '127.0.0.1',
+    '.ngrok-free.dev',
+    'overnoble-alessandro-tornly.ngrok-free.dev',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.ngrok-free.dev'
 ]
 
 
@@ -157,10 +167,7 @@ STATICFILES_DIRS = [
 
 # Directorio donde se recogerán todos los estáticos para producción (ejecutar collectstatic)
 STATIC_ROOT = '/home/patarroyoalexis/inventario_tecnologico/staticfiles'
-<<<<<<< HEAD
-=======
 
->>>>>>> 70326c32fd8946cb9b80cc11953e15cc6263a194
 # URL y directorio de archivos subidos por el usuario (MEDIA)
 MEDIA_URL = '/media/'
 # Directorio físico donde se guardarán los archivos subidos (inventario_tecnologico/media/)
