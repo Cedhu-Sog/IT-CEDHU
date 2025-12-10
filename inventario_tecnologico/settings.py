@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     # Apps de terceros
     'django_filters', # Utilizado en la app 'inventario' para filtros
+    'widget_tweaks', # Utilizado para ampliar los textbox del form del login
 
     # Apps locales del proyecto
     'usuarios',

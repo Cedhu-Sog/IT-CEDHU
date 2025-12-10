@@ -1,6 +1,7 @@
 {# usuarios/templates/usuarios/login.html #}
 {% extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}Iniciar Sesión{% endblock %}
 
@@ -8,74 +9,58 @@
 
 {% block content %}
 
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="col-lg-5 col-md-8 text-center mb-4">
-        <img src="{% static 'img/logo_cedhu.png' %}" class="" alt="Logo Cedhu">
-    </div> 
-    <div class="col-lg-5 col-md-8">
-        <div class="text-center card shadow-lg border-0 rounded-lg mt-5">
-            
-            {# Header del Card #}
-            <div class="card-header">
-                <h3 class="font-weight-light my-4">Acceso al Sistema</h3>
-            </div>
-            
-            {# Cuerpo del Card #}
-            <div class="card-body">
-                <form method="post" action="{% url 'usuarios:login' %}">
-                    {% csrf_token %}
-                    
-                    {# Mensajes de Error Global #}
-                    {% if form.non_field_errors %}
-                        <div class="alert alert-danger" role="alert">
-                            {% for error in form.non_field_errors %}
-                                <p class="mb-0">{{ error }}</p>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                    
-                    {# Campo Correo Electrónico #}
-                    <div class="mb-3">
-                        <label for="{{ form.username.id_for_label }}" class="form-label">Correo Electrónico</label><br>
-                        {{ form.username }}
-                        {% if form.username.errors %}
-                            {% for error in form.username.errors %}
-                                <small class="text-danger">{{ error }}</small>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
+<div class="container mt-4">
+    <div class="row justify-content-center align-items-center">
 
-                    {# Campo Contraseña #}
-                    <div class="mb-3">
-                        <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña</label><br>
-                        {{ form.password }}
-                        {% if form.password.errors %}
-                            {% for error in form.password.errors %}
-                                <small class="text-danger">{{ error }}</small>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                    
-                    {# Acciones del Formulario #}
-                    <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
-                        {% comment %} <a class="small text-decoration-none" href="{% url 'usuarios:password_reset' %}">
-                            ¿Olvidaste tu contraseña?
-                        </a> {% endcomment %}
-                        <button type="submit" class="btn btn-primary px-4">
-                            <i class="fas fa-sign-in-alt me-2"></i> Entrar
-                        </button>
-                    </div>
-                </form>
-            </div>
-            
-            {# Footer del Card #}
-            {% comment %} <div class="card-footer text-center py-3">
-                <div class="small">
-                    ¿Necesitas una cuenta? <a href="{% url 'usuarios:registro' %}">Regístrate aquí</a>
-                </div>
-            </div> {% endcomment %}
-            
+        <!-- Logo -->
+        <div class="col-12 col-md-8 col-lg-5 text-center mb-4">
+            <img src="{% static 'img/logo_cedhu.png' %}" class="img-fluid" alt="Logo Cedhu">
         </div>
+
+        <!-- Card del Login -->
+        <div class="col-12 col-md-8 col-lg-5 mb-4">
+            <div class="text-center card shadow-lg border-0 rounded-lg">
+
+                <div class="card-header">
+                    <h3 class="font-weight-light my-4">Acceso al Sistema</h3>
+                </div>
+
+                <div class="card-body">
+                    <form method="post" action="{% url 'usuarios:login' %}">
+                        {% csrf_token %}
+
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                {% for error in form.non_field_errors %}
+                                    <p class="mb-0">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label">Correo Electrónico</label>
+                            <br>
+                            {{ form.username|add_class:"form-control" }}
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label class="form-label">Contraseña</label>
+                            <br>
+                            {{ form.password|add_class:"form-control" }}
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="fas fa-sign-in-alt me-2"></i> Entrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
+
 {% endblock %}

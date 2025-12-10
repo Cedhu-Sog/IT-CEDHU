@@ -16,7 +16,8 @@ urlpatterns = [
     path('usuarios/', include('usuarios.urls')),
     
     # Rutas principales del inventario (CRUD, listas)
-    path('inventario/', include('inventario.urls')),
+    # path('inventario/', include('inventario.urls')),
+    # Esta sobra ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
     # Rutas para la exportación de datos
     path('exportacion/', include('exportacion.urls')),
