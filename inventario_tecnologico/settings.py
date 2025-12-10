@@ -4,6 +4,10 @@ Configuración de Django para el proyecto inventario_tecnologico.
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Cargar variables del archivo .env
+load_dotenv() 
 
 # Construye rutas dentro del proyecto como esta: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,7 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ADVERTENCIA: ¡Mantén la clave secreta usada en producción en secreto!
 # Por motivos de ejemplo, se usa una clave de desarrollo simple.
 # En un proyecto real, esto debe cargarse desde variables de entorno.
-import os
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
@@ -28,6 +31,8 @@ ALLOWED_HOSTS = [
     '192.168.1.250',
     '.ngrok-free.dev',
     'overnoble-alessandro-tornly.ngrok-free.dev',
+    '127.0.0.1', 
+    'localhost',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
