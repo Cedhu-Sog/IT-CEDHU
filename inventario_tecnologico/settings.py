@@ -6,46 +6,44 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Cargar variables del archivo .env
-load_dotenv() 
+# ==============================================================================
+# CARGA DE VARIABLES DE ENTORNO
+# ==============================================================================
 
-# Construye rutas dentro del proyecto como esta: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Cargar variables del archivo .env
+load_dotenv(BASE_DIR / ".env")
 
 # ==============================================================================
 # CONFIGURACIÓN DE SEGURIDAD
 # ==============================================================================
 
-# ADVERTENCIA: ¡Mantén la clave secreta usada en producción en secreto!
-# Por motivos de ejemplo, se usa una clave de desarrollo simple.
-# En un proyecto real, esto debe cargarse desde variables de entorno.
-
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
-# Modo de depuración. Desactivar en producción.
-DEBUG = False
+if not SECRET_KEY:
+    raise Exception("DJANGO_SECRET_KEY no está definido en el archivo .env")
 
-# Hosts permitidos para servir el proyecto.
+DEBUG = os.environ.get("DEBUG") == "True"
+
 ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
     '192.168.1.250',
     '.ngrok-free.dev',
     'overnoble-alessandro-tornly.ngrok-free.dev',
-    '127.0.0.1', 
-    'localhost',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.ngrok-free.dev'
 ]
 
-
 # ==============================================================================
-# CONFIGURACIÓN DE APLICACIONES
+# APLICACIONES
 # ==============================================================================
 
 INSTALLED_APPS = [
-    # Apps de Django por defecto
+    # Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,15 +51,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Apps de terceros
-    'django_filters', # Utilizado en la app 'inventario' para filtros
-    'widget_tweaks', # Utilizado para ampliar los textbox del form del login
+    # Terceros
+    'django_filters',
+    'widget_tweaks',
 
-    # Apps locales del proyecto
+    # Apps locales
     'usuarios',
     'inventario',
     'exportacion',
 ]
+
+# ==============================================================================
+# MIDDLEWARE
+# ==============================================================================
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,16 +77,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'inventario_tecnologico.urls'
 
-
 # ==============================================================================
-# CONFIGURACIÓN DE TEMPLATES
+# TEMPLATES
 # ==============================================================================
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # Directorio de templates globales (inventario_tecnologico/templates/)
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,114 +100,102 @@ TEMPLATES = [
 WSGI_APPLICATION = 'inventario_tecnologico.wsgi.application'
 ASGI_APPLICATION = 'inventario_tecnologico.asgi.application'
 
-
+# ==============================================================================
+# BASE DE DATOS (DESARROLLO)
+# ==============================================================================
 
 # ==============================================================================
-# CONFIGURACIÓN DE BASE DE DATOS
+# BASE DE DATOS (DESARROLLO)
 # ==============================================================================
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # Archivo db.sqlite3 en la raíz del proyecto
-        'NAME': BASE_DIR / 'db.sqlite3', 
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'inventario_db',
+        'USER': 'inventario_user',
+        'PASSWORD': 'inventario123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
-
 # ==============================================================================
-# CONFIGURACIÓN DE AUTENTICACIÓN Y SEGURIDAD
+# AUTENTICACIÓN
 # ==============================================================================
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# Especifica el modelo de usuario personalizado creado en la app 'usuarios'
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
-# Redirección tras iniciar sesión y cerrar sesión
-LOGIN_URL = 'usuarios:login' # Nombre de la URL para el login
+LOGIN_URL = 'usuarios:login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'usuarios:login'
 
-
-# ==============================================================================
-# CONFIGURACIÓN DE INTERNACIONALIZACIÓN
-# ==============================================================================
-
-LANGUAGE_CODE = 'es-co' # Colombia (ajustar si es necesario)
-
-TIME_ZONE = 'America/Bogota' # Zona horaria de Colombia (ajustar si es necesario)
-
-USE_I18N = True
-
-USE_TZ = True
-
-
-# ==============================================================================
-# CONFIGURACIÓN DE ARCHIVOS ESTÁTICOS Y MEDIA
-# ==============================================================================
-
-# URL y directorio de archivos estáticos
-STATIC_URL = '/static/'
-# Directorios donde Django buscará archivos estáticos
-STATICFILES_DIRS = [
-    BASE_DIR / 'static', 
+AUTHENTICATION_BACKENDS = [
+    'usuarios.backends.AprobacionRequeridaBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
-# Directorio donde se recogerán todos los estáticos para producción (ejecutar collectstatic)
-STATIC_ROOT = '/home/patarroyoalexis/inventario_tecnologico/staticfiles'
+# ==============================================================================
+# INTERNACIONALIZACIÓN
+# ==============================================================================
 
-# URL y directorio de archivos subidos por el usuario (MEDIA)
+LANGUAGE_CODE = 'es-co'
+TIME_ZONE = 'America/Bogota'
+USE_I18N = True
+USE_TZ = True
+
+# ==============================================================================
+# ARCHIVOS ESTÁTICOS Y MEDIA
+# ==============================================================================
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = '/media/'
-# Directorio físico donde se guardarán los archivos subidos (inventario_tecnologico/media/)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
-
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # ==============================================================================
-# CONFIGURACIÓN MISCELÁNEA
+# MISC
 # ==============================================================================
 
-# Tipo de campo para la clave primaria automática
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# ==============================================================================
+# LOGGING
+# ==============================================================================
 
-# ==============================================================================
-# CONFIGURACIÓN DE LOGGING
-# ==============================================================================
+LOGS_DIR = BASE_DIR / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
-            'maxBytes': 1024 * 1024 * 5, # 5 MB
-            'backupCount': 5,
-            'formatter': 'verbose',
-        },
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
     'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
             'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': LOGS_DIR / 'django.log',
+            'maxBytes': 1024 * 1024 * 5,
+            'backupCount': 5,
+            'formatter': 'verbose',
         },
     },
     'root': {
@@ -215,8 +203,3 @@ LOGGING = {
         'level': 'INFO',
     },
 }
-
-AUTHENTICATION_BACKENDS = [
-    'usuarios.backends.AprobacionRequeridaBackend',  # Tu backend personalizado
-    'django.contrib.auth.backends.ModelBackend',     # Backend por defecto (fallback)
-]
