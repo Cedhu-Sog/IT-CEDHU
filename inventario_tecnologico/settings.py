@@ -100,24 +100,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'inventario_tecnologico.wsgi.application'
 ASGI_APPLICATION = 'inventario_tecnologico.asgi.application'
 
-# ==============================================================================
-# BASE DE DATOS (DESARROLLO)
-# ==============================================================================
 
 # ==============================================================================
-# BASE DE DATOS (DESARROLLO)
+# BASE DE DATOS 
 # ==============================================================================
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cedhu_db',
-        'USER': 'inventario_user',
-        'PASSWORD': 'inventario123',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
+
+
 # ==============================================================================
 # AUTENTICACIÓN
 # ==============================================================================
