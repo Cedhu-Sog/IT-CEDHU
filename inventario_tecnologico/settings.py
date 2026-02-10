@@ -111,7 +111,7 @@ ASGI_APPLICATION = 'inventario_tecnologico.asgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'inventario_db',
+        'NAME': 'cedhu_db',
         'USER': 'inventario_user',
         'PASSWORD': 'inventario123',
         'HOST': '127.0.0.1',
