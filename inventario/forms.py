@@ -10,8 +10,8 @@ class ElementoForm(forms.ModelForm):
     class Meta:
         model = Elemento
         fields = [
-            'maneja_cantidad',  # Nuevo campo
-            'cantidad',         # Nuevo campo
+            'maneja_cantidad',
+            'cantidad',
             'tipo_dispositivo',
             'marca',
             'modelo',
@@ -58,10 +58,11 @@ class ElementoForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        # Hacer que serial no sea requerido por defecto
+        # Hacer que serial no sea requerido por defecto (se valida en clean())
         self.fields['serial'].required = False
+        self.fields['cantidad'].required = False
         
-        # Agregar clases CSS y atributos para JavaScript
+        # Agregar atributos para JavaScript
         self.fields['serial'].widget.attrs.update({
             'data-field': 'serial-field'
         })
@@ -71,29 +72,39 @@ class ElementoForm(forms.ModelForm):
         
     def clean(self):
         cleaned_data = super().clean()
-        maneja_cantidad = cleaned_data.get('maneja_cantidad')
-        serial = cleaned_data.get('serial')
+        maneja_cantidad = cleaned_data.get('maneja_cantidad', False)
+        serial = cleaned_data.get('serial', '').strip() if cleaned_data.get('serial') else ''
         cantidad = cleaned_data.get('cantidad')
         
-        # Validar que si NO maneja cantidad, debe tener serial
-        if not maneja_cantidad and not serial:
-            self.add_error('serial', 'Debe ingresar un número de serie para elementos individuales.')
+        # CASO 1: Elemento con SERIAL ÚNICO (maneja_cantidad = False)
+        if not maneja_cantidad:
+            # Debe tener serial
+            if not serial:
+                self.add_error('serial', 'Debe ingresar un número de serie para elementos individuales.')
+            # Limpiar cantidad (se establecerá en 1 automáticamente en el modelo)
+            cleaned_data['cantidad'] = 1
         
-        # Validar que si maneja cantidad, NO debe tener serial
-        if maneja_cantidad and serial:
-            self.add_error('serial', 'Los elementos por cantidad no deben tener número de serie.')
-        
-        # Validar cantidad mínima
-        if maneja_cantidad and (not cantidad or cantidad < 1):
-            self.add_error('cantidad', 'Debe ingresar una cantidad válida (mínimo 1).')
+        # CASO 2: Elemento por CANTIDAD (maneja_cantidad = True)
+        else:
+            # NO debe tener serial
+            if serial:
+                self.add_error('serial', 'Los elementos por cantidad no deben tener número de serie. Deje este campo vacío.')
+            # Limpiar serial
+            cleaned_data['serial'] = None
+            
+            # Debe tener cantidad válida
+            if not cantidad or cantidad < 1:
+                self.add_error('cantidad', 'Debe ingresar una cantidad válida (mínimo 1).')
         
         return cleaned_data
     
     def clean_serial(self):
         """
-        Validación personalizada para el número de serie.
+        Validación y normalización del número de serie.
         """
         serial = self.cleaned_data.get('serial')
         if serial:
-            return serial.upper().strip()
-        return serial
+            serial = serial.upper().strip()
+            # Solo retornar si tiene contenido real
+            return serial if serial else None
+        return None

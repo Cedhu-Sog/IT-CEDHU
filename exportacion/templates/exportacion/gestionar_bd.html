@@ -21,7 +21,7 @@
             <div class="card-body p-4">
                 
                 <p class="lead text-center mb-5">
-                    Utilice estas opciones con precaución para crear respaldos de seguridad o restaurar el inventario completo.
+                    Utilice estas opciones con precaución para crear respaldos de seguridad o restaurar el inventario completo desde PostgreSQL.
                 </p>
 
                 <div class="row g-4">
@@ -33,7 +33,7 @@
                                 <i class="fas fa-download fa-3x text-success mb-3"></i>
                                 <h5 class="card-title">Descargar Respaldo (BD)</h5>
                                 <p class="card-text">
-                                    Genera una copia de seguridad del archivo `db.sqlite3` con todos los datos del inventario.
+                                    Genera una copia de seguridad de la base de datos PostgreSQL con todos los datos del inventario en formato SQL.
                                 </p>
                                 <a href="{% url 'exportacion:descargar_bd' %}" class="btn btn-success btn-lg mt-3">
                                     <i class="fas fa-file-download me-2"></i> Descargar BD
@@ -49,7 +49,7 @@
                                 <i class="fas fa-upload fa-3x text-danger mb-3"></i>
                                 <h5 class="card-title">Cargar/Restaurar BD</h5>
                                 <p class="card-text">
-                                    Reemplaza la base de datos actual con un archivo de respaldo. **Acción irreversible.**
+                                    Reemplaza la base de datos PostgreSQL actual con un archivo de respaldo SQL. **Acción irreversible.**
                                 </p>
                                 <a href="{% url 'exportacion:cargar_bd' %}" class="btn btn-danger btn-lg mt-3">
                                     <i class="fas fa-file-upload me-2"></i> Cargar BD
@@ -61,7 +61,7 @@
                 </div>
                 
                 <p class="text-muted small mt-5 text-center">
-                    Los archivos de respaldo se guardarán en una carpeta llamada "Base de Datos - Inventario".
+                    Los archivos de respaldo (.sql) se guardarán en una carpeta llamada "Base de Datos - Inventario".
                 </p>
 
             </div>
