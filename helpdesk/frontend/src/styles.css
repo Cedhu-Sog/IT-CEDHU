@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f3f4f6; }
+.container { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+.card { background: white; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+.grid { display: grid; gap: .5rem; }
+input, textarea, select, button { padding: .5rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid #ddd; padding: .4rem; }
+tr:hover { background: #fafafa; cursor: pointer; }
+.actions { display: flex; gap: .5rem; }
